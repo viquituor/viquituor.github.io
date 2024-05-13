@@ -20,7 +20,7 @@ a {
     left: 40rem;
 }
 h1{
-  position: fixed;
+  position: relative;
   top:7rem ;
   left: 39rem;
   font-size: 5rem;
