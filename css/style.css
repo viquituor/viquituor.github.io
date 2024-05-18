@@ -1,29 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Freeman&family=Rajdhani:wght@300;400;500;600;700&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
 
+}
 body{
     background-color: #db98af;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     
 }
-a {
-    text-decoration: none;
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
 }
 .foto{
-    position: fixed;
-    border-radius: 40rem;
-    width: 14rem;
+    border-radius: 80rem;
+    width: 15%;
     height:8rem;
-    top: 2rem;
-    left: 40rem;
+
 }
 h1{
-  position: relative;
-  top:7rem ;
-  left: 39rem;
-  font-size: 5rem;
+  font-size: 4rem;
   font-family: "Rajdhani", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -36,6 +36,22 @@ h1 a:hover{
     color: #ffb801;
 }
 
+.opcoes{
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    gap:12rem ;
+}
+.opcoes a{
+    font-size: 2rem;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.opcoes a:visited{
+    color: rgb(191, 9, 170);
+}
     h2{
         font-size: 5rem;
   font-family: "freeman", sans-serif;
@@ -51,7 +67,7 @@ main{
     align-items: center;
     height: 40rem;
     width: auto;
-    margin-top: 15rem;
+    
 }
 h2 a:hover{
     color: #db98af;
@@ -77,11 +93,11 @@ footer a:hover{
     color: #ffffff;
 }
 footer .logo-insta{
-    width: 5rem;
-    height: 5rem;
+    width: 2rem;
+    height: 2rem;
 }
 p{
-  font-size: 3rem;
+  font-size: 1rem;
   font-family: "Volkhov", sans-serif;
   font-weight: 400;
   font-style: normal; 
