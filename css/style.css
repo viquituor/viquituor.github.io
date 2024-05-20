@@ -14,7 +14,7 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
+
 }
 .foto{
     border-radius: 80rem;
@@ -48,7 +48,7 @@ h1 a:hover{
     display: flex;
     justify-content: space-around;
     align-content: space-around;
-    gap:12rem ;
+    gap:15rem ;
 }
 .opcoes a{
     font-size: 2rem;
@@ -58,9 +58,11 @@ h1 a:hover{
 }
 
     h2{
+        border:0.5rem solid #00995e ;
+        border-radius: 50%;
         font-size: 5rem;
-  font-family: "freeman", sans-serif;
-  font-weight: 400;
+  font-family: "volkhov", sans-serif;
+  font-weight: 800;
   font-style: normal;
 
     }
@@ -68,8 +70,10 @@ h1 a:hover{
 main{
     background: linear-gradient(84deg, rgba(5,140,215,1) 5%, rgba(0,153,94,1) 14%, rgba(253,90,70,1) 32%, rgba(255,197,103,1) 54%, rgba(251,125,168,1) 81%, rgba(85,44,183,1) 98%);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 40rem;
     width: auto;
     
@@ -79,6 +83,9 @@ h2 a:hover{
 }
 main a:visited{
     color: #ffffff;
+}
+main a{
+    color: #552cb7;
 }
 
 footer{
@@ -106,4 +113,40 @@ p{
   font-family: "Volkhov", sans-serif;
   font-weight: 400;
   font-style: normal; 
+}
+
+/*mobile*/
+@media(max-width: 450px){
+
+    .foto{
+        border-radius: 80rem;
+        width: 25%;
+        height:4rem;
+    
+    }
+    .opcoes{
+        gap:2rem ;
+    }
+h1 a{
+    color: #00995e;
+}
+
+    h1 a:visited{
+        color: #00995e;
+    }
+    
+    h1 a:hover{
+        color: #ffc567;
+    }
+    .opcoes a{
+        color: #552cb7;
+    }
+    
+    .opcoes a:visited{
+        color: #552cb7;
+    }
+    
+    .opcoes a:hover{
+        color: #fd5a46;
+    }
 }

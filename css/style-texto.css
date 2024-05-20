@@ -54,7 +54,7 @@
   .opcoes a{
       font-size: 2rem;
     font-family: "Rajdhani", sans-serif;
-    font-weight: 400;
+    font-weight: 800;
     font-style: normal;
   }
   
@@ -69,11 +69,19 @@
   main{
       background: linear-gradient(84deg, rgba(5,140,215,1) 5%, rgba(0,153,94,1) 14%, rgba(253,90,70,1) 32%, rgba(255,197,103,1) 54%, rgba(251,125,168,1) 81%, rgba(85,44,183,1) 98%);
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 60rem;
+      height: auto;
       width: auto;
       
+  }
+  main p{
+    font-family: "Danfo", serif;
+    font-size: 0.8rem;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:"ELSH" 0;
   }
   h2 a:hover{
       color: #db98af;
@@ -114,40 +122,128 @@
 
   .cartas{
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: space-around;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
   }
 
   #abrir{
     
-    background: none;
-    border: none;
-    font-family: "Danfo", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "ELSH" 0;
+      font-family: "Danfo", serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-variation-settings:"ELSH" 0;
   }
-  #abrir:hover{
-z-index: -1;
+  .cartas:hover{
+    .texto1{
+      z-index: 4;
+    }
+  }
+  .cartas:hover{
+    .texto2{
+      z-index: 4;
+    }
+  }
+  .cartas:hover{
+    .texto3{
+      z-index: 4;
+    }
+  }
 
-}
-  
   .card{
-    position:fixed;
-    border: 1rem solid #552cb7;
-    border-radius: 12rem;
-    height: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
     
+    padding: 2rem;
+
   }
-  .card:hover{
-    z-index: 2;
+  .texto1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.5rem solid #00995e;
+    border-radius: 20%;
+    height: auto;
+    z-index: -1;
   }
+  .texto2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.5rem solid #00995e;
+    border-radius: 20%;
+    height: auto;
+    z-index: -1;
+  }
+  .texto3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.5rem solid #00995e;
+    border-radius: 20%;
+    height: auto;
+    z-index: -1;
+  }
+
   .card p{
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
   }
+
+/*mobile*/
+@media(max-width: 450px){
+
+  .foto{
+      border-radius: 80rem;
+      width: 25%;
+      height:4rem;
+  
+  }
+  .opcoes{
+      gap:2rem ;
+  }
+h1 a{
+  color: #00995e;
+}
+
+  h1 a:visited{
+      color: #00995e;
+  }
+  
+  h1 a:hover{
+      color: #ffc567;
+  }
+  .opcoes a{
+      color: #552cb7;
+  }
+  
+  .opcoes a:visited{
+      color: #552cb7;
+  }
+  
+  .opcoes a:hover{
+      color: #fd5a46;
+  }
+
+  /*texto*/
+
+  .cartas{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+
+  .card p{
+    font-family: "Oswald", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+}
