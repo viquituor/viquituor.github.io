@@ -74,12 +74,13 @@ main{
     background-color: #524f4f;
     border-radius: 20%;
 }
-    h2{
+  .meio h2{
    
    color: #e595ec;     
   font-size: 2rem;
   font-family: "volkhov", sans-serif;
   font-weight: 800;
+  text-align: center;
   
     }
 
@@ -109,6 +110,7 @@ main{
     .texp {
         display: flex;
         flex-direction: row;
+        align-content: stretch;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
@@ -126,17 +128,29 @@ main{
     }
 
     .habilidades{
+        text-align: center;
         background-color:#f193fa;
         height: 100vh;
         gap: 3rem;
     }
 .habilidades h1{
         text-align: center;
-        font-size: 1.4rem;
+        font-size: 4.5rem;
         font-family: "volkhov", sans-serif;
         font-weight: 800;
+        color: #00995e;
+        padding: 3rem;
+}
+.habilidades h2{
+    font-family: "volkhov", bold;
+    font-weight: 800;
+    font-size: 2rem;
+}
+.habilidades h3{
 
-        
+    font-family: "volkhov", bold;
+    font-weight: 200;
+    font-size: 1rem;
 }
     .contatos{
         height: 100vh; 
@@ -170,7 +184,7 @@ main{
     .foto{
         border-radius: 80rem;
         width: 25%;
-        height:4rem;
+        height:2rem;
     
     }
 }
