@@ -269,6 +269,7 @@ main{
         flex-direction: column;
         height: 35rem;
         position: relative;
+        top: 2rem;
         
     }
     .lado-esquerdo{
