@@ -267,9 +267,9 @@ main{
      
     main{
         flex-direction: column;
-        height: 35rem;
+        height: 48rem;
         position: relative;
-        top: 2rem;
+        top: 0rem;
         
     }
     .lado-esquerdo{
@@ -293,13 +293,15 @@ main{
 
     .header-dw{
         position: relative;
-        top: -45rem;
+        top: -55rem;
         gap: 1rem;
     }
     .header-dw h1{
-        font-size: 0.8rem;
+        font-size:0.8rem;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+        align-content: center;
       
     }
 
