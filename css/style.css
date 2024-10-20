@@ -268,8 +268,7 @@ main{
     main{
         flex-direction: column;
         height: 48rem;
-        position: relative;
-        top: 0rem;
+       
         
     }
     .lado-esquerdo{
@@ -293,7 +292,7 @@ main{
 
     .header-dw{
         position: relative;
-        top: -55rem;
+        top: -58rem;
         gap: 1rem;
     }
     .header-dw h1{
