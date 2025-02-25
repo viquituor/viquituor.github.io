@@ -54,6 +54,11 @@ header{
     font-weight: 800;
     text-align: center;
 }
+
+.nome:hover {
+    transform: rotate(10deg); /* Rotaciona o botão em 10 graus */
+}
+
 .foto{
     border-radius: 9%;
     width: auto;
@@ -257,7 +262,7 @@ main{
     }
 
     .nome{
-        font-size: 2rem;
+        font-size: 1.5rem;
         background-color: transparent;
     }
 
@@ -267,8 +272,11 @@ main{
      
     main{
         flex-direction: column;
-        height: 48rem;
-       
+        justify-content: space-between;
+        height: 40rem;
+        position: relative;
+        top: 0;
+      
         
     }
     .lado-esquerdo{
@@ -292,11 +300,13 @@ main{
 
     .header-dw{
         position: relative;
-        top: -58rem;
+       top: -44rem;
+        justify-content: space-between;
         gap: 1rem;
+
     }
     .header-dw h1{
-        font-size:0.8rem;
+        font-size:1rem;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -356,7 +366,21 @@ main{
     }
 }
    /*contatos*/
+   .contatos{
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 
+     h1{
+   font-size: 1.5rem;
+        }
+
+    .ctimg{
+          flex-direction: column;     
+            }
+}
 
     
 }
