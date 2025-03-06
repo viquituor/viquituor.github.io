@@ -1,0 +1,129 @@
+
+
+header{
+    width: 99vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+
+    background-color: #ffdd55;
+
+    aside{
+        display: flex;
+        flex-direction: column;
+        font-family: "montserrat";
+        
+       h1{
+        display: flex;
+        flex-direction: row;
+        font-size: 3rem;
+        font-weight: 900;
+       }
+       h2{
+
+        font-size: 4rem;
+        font-weight: 500;
+       }
+       h3{
+        font-size: 2rem;
+        font-weight: 200;
+        font-style: bold;
+       }
+    }
+
+
+    .bt{
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        gap: 2rem;
+        padding-top: 1rem;
+    
+        font-size: 1.3rem;
+        font-family: 'montserrat';
+        font-weight: 200;
+        .mail, .cv{
+            text-align: center;
+            align-content: center;
+            height:60% ;
+            width: 30%;
+            background-color: #000000;
+            color: #ffffff;
+            border: solid 2px #ffdd55;
+            border-radius: 200px;
+            box-shadow: 10px 10px 0px -1px,
+                        20px 20px 30px -1px #3f3c3c;
+
+
+        }
+     .mail:hover, .cv:hover{
+        background-color: #ffffff;
+        color: #000000;           
+         box-shadow: 10px 10px 0px -1px #000000,
+                     20px 20px 30px -1px #3f3c3c;
+     }
+     
+    }
+}
+
+/* Estilos para .foto */
+.foto {
+    height: 30rem;
+    width: auto;
+    border-radius: 10px;
+    border: solid #000000 3px;
+    box-shadow: 15px 15px 0px -1px #000000,
+                20px 20px 30px -1px #000000;
+}
+
+
+@media (max-width: 768px) {
+   
+
+    header{
+        width: 99vw;
+        position: relative;
+        flex-direction: column;
+        justify-content: start;
+        align-content: center;
+        align-items: center;
+        padding-left: 1rem;
+        aside{
+            gap: 1rem;
+            position: relative;
+            top: 6rem;
+
+            h1{
+                font-size: 2rem;
+            }
+            h2{
+                font-size: 1.8rem;
+            }
+            h3{
+                font-size: 1.4rem;
+            }
+        }
+    }
+    .foto{
+        height: 20rem;
+        position: relative;
+        left: -4rem;
+        top: -3rem;
+
+    }
+    .bt{
+    
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .mail, .cv{
+            font-size: 0.8rem;
+        }
+
+    }
+}
