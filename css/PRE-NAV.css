@@ -7,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    
 }
 
 /*FONTES*/
@@ -26,6 +27,7 @@
 /* Para garantir que o corpo fique acima do vídeo */
 body {
     z-index: 1;
+    flex-direction: column;
 }
 
 nav{
