@@ -18,7 +18,6 @@
         background-color: #1066e8;
         box-shadow: 10px 10px 10px -2px #3f3c3c;
         border-radius: 20px;
-        padding: 10rem;
         gap: 3rem;
 
         font-family: 'montserrat';
@@ -94,7 +93,7 @@
 @media (max-width: 768px) {
 
     .sobre{
-        width: 99.9svw;
+        width: 100svw;
         height:auto;
         padding: 1rem;
 
