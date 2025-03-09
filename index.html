@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/HEADER.css">
     <link rel="stylesheet" href="css/PRELOAD.css">
     <link rel="stylesheet" href="css/SOBRE.css">
+    <link rel="stylesheet" href="css/EXPERIENCIAS.css">
 </head>
 <body>
 
@@ -32,11 +33,11 @@
     <nav>
         <div class="logo"><p>V</p></div>
         <div class="pages">
-            <p>HOME</p>
-            <p>SOBRE MIM</p>
-            <p>EXPERIENCIAS</p>
-            <p>SKILLS</p>
-            <p>CONTATOS</p>
+            <p><a href="#conteudo">HOME</a></p>
+            <p><a href="#sobre">SOBRE MIM</a></p>
+            <p><a href="">EXPERIENCIAS</a></p>
+            <p><a href="">SKILLS</a></p>
+            <p><a href="">CONTATOS</a></p>
         </div>
     </nav>
 
@@ -47,7 +48,7 @@
                 <h3>Desenvolvedor Front-End Junior || Engenheiro de Dados Junior </h3>
                 <div class="bt">
                     <a class="mail" href="mailto:vitoralmeide@gmail.com">ME CONTRATE</a>
-                    <a class="cv" href="" download="">CURRICULO</a>
+                    <a class="cv" href="img/Currículo-Paulo Victor.pdf" download="Currículo-Paulo Victor.pdf">CURRICULO</a>
                 </div>
             </aside>
           
@@ -55,7 +56,7 @@
         </header>
 
         <main>
-            <section class="sobre">
+            <section class="sobre" id="sobre">
                 <div class="card">
                     <img class="foto" src="img/perfil.jpg" alt="perfil">
                     <div class="texto-sobre">
@@ -73,15 +74,29 @@
                     
                 </div>
             </section>
+
+
+            <section id="exp" class="experiencias">
+                <h1>EXPERIENCIAS</h1>
+                <div class="card-exp">
+                    <div class="text-exp">
+                     <h1>COMPASS UOL SCHOLLARSHIP - AWS DATA CLOUD ENGINEERING</h1>
+                     <p>
+                        Durante meu estágio na Compass UOL, atuei na engenharia de dados, desenvolvendo pipelines para ingestão, processamento e modelagem de dados. Utilizei AWS S3, Glue, Lambda e Apache Spark para otimizar fluxos de dados e automatizei processos com Docker e GitHub Actions.
+                     </p>
+                     <p>   
+                        Também desenvolvi um dashboard interativo no Amazon QuickSight, criando gráficos e relatórios para facilitar a tomada de decisão baseada em dados estruturados.
+                    </p>
+                    <p>
+                         Esse estágio consolidou minha experiência em big data, computação em nuvem e engenharia de dados, fortalecendo minha capacidade de criar soluções escaláveis e eficientes.
+                    </p>
+                    </div>
+                    <img src="img/dashboard_page-0001.jpg" alt="">
+                </div>
+            </section>
         </main>
 
-        <section id="exp" class="experiencias">
-            <h1>EXPERIENCIAS</h1>
-            <div>
-                <h1>COMPASS UOL SCHOLLARSHIP - AWS DATA CLOUD ENGINEERING</h1>
-                <p>Descrição do trabalho na Compass...</p>
-            </div>
-        </section>
+        
         
         <footer id="cont" class="contatos">
             <h1>CONTATO</h1>

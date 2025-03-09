@@ -25,6 +25,13 @@
 
         img{
             box-shadow: none;
+            animation:ease-, ease-out;
+        }
+
+        img:hover{
+            box-shadow: 10px 10px 0px -1px #000000,
+                        20px 20px 30px -1px #3f3c3c;
+            transform:scale(1.01);
         }
 .texto-sobre{
     display: flex;
@@ -87,36 +94,40 @@
 @media (max-width: 768px) {
 
     .sobre{
-        width: 99svw;
+        width: 99.9svw;
+        height:auto;
+        padding: 1rem;
 
         .card{
-            
-            position: relative;
-            top: 10rem;
-            height: auto;
+            padding: 2rem;
+            margin: 0;
+            display: flex;
+            gap: 3rem;
+            width: 80svw;
+            height: fit-content;
             flex-direction: column;
+            justify-content: space-around;
             img{
-                width: 5rem;
-                height: auto;
                 display: none;
+                visibility: hidden; /* Esconde a imagem */
+                position: absolute; /* Remove do fluxo do layout */
             }
 
 
             .texto-sobre{
-                position: relative;
-                top: -8rem;
+             
 
                 width: 70svw;
                 h1{
-                    font-size: 2rem;
+                    font-size: 2.7rem;
 
                 }
                 h2{
-                    font-size: 1rem;
+                    font-size: 1.3rem;
                 }
                 p{
-                    font-size: 1rem ;
-                    text-align: ;
+                    font-size: 1.1rem ;
+                    
                 }
 
             }
