@@ -86,7 +86,7 @@ header{
    
 
     header{
-        width: 99.9vw;
+        width: 100svw;
         position: relative;
         flex-direction: column;
         justify-content: start;

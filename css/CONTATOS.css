@@ -37,6 +37,11 @@
         justify-content: space-between;
         align-items: end;
         align-content: end;
+
+        img{
+            width: 1rem;
+            height: auto;
+        }
         
     }
 
@@ -72,4 +77,28 @@
           
         }
     }
+}
+
+
+@media (max-width: 768px) {
+
+
+    .contatos{
+        width: 100svw;
+        .last-logo{
+            display: none;
+        }
+    
+
+        .last{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+    }
+
+
+
 }

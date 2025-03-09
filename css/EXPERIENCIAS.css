@@ -2,7 +2,7 @@
     height: 100VH;
     width: 99sVW;
     background-color: #FFDD55;
-    padding: 20px;
+    
     text-align: center;
 
     display: flex;
@@ -30,7 +30,6 @@
         box-shadow:-10px 10px 0px -2px #000000,
                    -15px 15px 15px -2px #3f3c3c;
         border-radius: 20px;
-        padding: 10rem;
         gap: 3rem;
 
         img{
@@ -67,10 +66,9 @@
 @media (max-width: 768px) {
     .experiencias{
         
-        width: 99.9vw;
+        width: 100svw;
         height: auto;
-        padding: 5rem;
-        gap: 2rem;
+        gap: 1rem;
         h1{
             font-size: 1.2rem;
             
@@ -83,7 +81,7 @@
             height: auto;
             flex-direction: column;
             gap: 2rem;
-            padding: 2rem;
+            padding: 1rem;
             img{
                 width:60svw;
                 height: auto;
