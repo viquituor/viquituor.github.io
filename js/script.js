@@ -6,12 +6,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     gsap.to(".caixa", {
-        y: -350, // Move 300px para a direita
+        y: -350,
         x:  350,
         duration: 5,
         repeat: -1, // Repetição infinita
-        yoyo: false, // Volta para a posição original
+        yoyo: true, // Volta para a posição original
         ease: "power1.inOut" // Suavização do movimento
+    });
+
+    gsap.to(".last-logo", {
+        y: -80,
+        duration: 3,
+        repeat: -1, // Repetição infinita
+        yoyo: true, // Volta para a posição original
+        ease: "power5.inOut" // Suavização do movimento
     });
     
 

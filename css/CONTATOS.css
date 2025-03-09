@@ -1,0 +1,75 @@
+.contatos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 99vw;
+    background-color: #ffdd55;
+    padding-top: 3rem;
+
+
+    .bye{
+        width: 95vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        font-family: 'montserrat';
+        font-weight: 800;
+        font-size: 1.1rem;
+        color: #000000;
+        padding: 2rem;
+        text-align: center;
+
+
+        .text{
+            width: 50vw;
+        }
+        
+    }
+
+    .last{
+        width: 95vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: end;
+        align-content: end;
+        
+    }
+
+    .last-logo{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: start;
+        justify-content:start;
+        gap: 10rem;
+    }
+    .logo{
+
+        width: 45px;
+        background-color: #00c6ae;
+        border-radius: 100px;
+        box-shadow: 8px 5px 0px 2px rgba(255,255,255,1);
+
+        p:hover{
+            background-color: #00c6ae;
+
+        }
+  
+        p{  
+            font-size: 2rem;
+            font-family: 'megrim';
+            font-weight: 700;
+            text-align: center;
+            align-content: center;
+            border-radius: 100px;
+            border: solid 2px #050640;
+            color: #000000;
+          
+        }
+    }
+}
