@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     gsap.from(".card", {
         opacity: 0,
-        y: -500, // Move para cima no início (vindo de baixo)
+        y: -100, // Move para cima no início (vindo de baixo)
         duration: 3, // Duração mais curta para uma animação mais suave
         stagger: 2, // Atraso entre cada animação
         immediateRender: false,
