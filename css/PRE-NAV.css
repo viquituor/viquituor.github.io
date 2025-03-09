@@ -7,8 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-
-    
+    font-family: "montserrat";
     
 }
 
@@ -85,6 +84,13 @@ nav{
         a{
             color: #ffffff;
             font-weight: 700;
+            padding: 0.5rem;
+        }
+        a:hover{
+          
+            border: solid 3px #ffdd55;
+            border-radius: 20px;
+            box-shadow: 10px 10px 0px -3px #ffffff;
         }
     }
     

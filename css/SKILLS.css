@@ -1,0 +1,82 @@
+.skills {
+    height: auto;
+    width: 99.9vw;
+    background-color: #eb771e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 8rem;
+}
+
+.skills h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 4rem;
+}
+
+.card-skill-f, .card-skill-b, .card-skill-d, .card-skill-o {
+    height: 200px;
+    width: 200px;
+    background-color: #a259ff;
+    border: solid 3px #0acf83;
+    box-shadow: 10px 10px 0px -1px #000000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    perspective: 1000px; /* Adiciona perspectiva para o efeito 3D */
+    position: relative;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Transição suave */
+}
+
+.card-skill-f h1, .card-skill-b h1, .card-skill-d h1, .card-skill-o h1,
+.card-skill-f p, .card-skill-b p, .card-skill-d p, .card-skill-o p {
+    position: absolute;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    backface-visibility: hidden; /* Evita que o conteúdo vaze durante a rotação */
+}
+
+.card-skill-f h1, .card-skill-b h1, .card-skill-d h1, .card-skill-o h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    opacity: 1;
+    visibility: visible;
+}
+
+.card-skill-f p, .card-skill-b p, .card-skill-d p, .card-skill-o p {
+    opacity: 0;
+    visibility: hidden;
+    font-size: 1rem; 
+    font-weight: 300;
+}
+
+.card-skill-f:hover, .card-skill-b:hover, .card-skill-d:hover, .card-skill-o:hover {
+    transform: scale(1.2); /* Aumenta o tamanho do card em 20% */
+    box-shadow: 15px 15px 0px -1px #ffffff, 
+                20px 20px 30px -1px #3f3c3c; /* Ajusta a sombra para o novo tamanho */
+    background-color: #0acf83;
+    color: #ffffff;
+}
+
+.card-skill-f:hover h1, .card-skill-b:hover h1, .card-skill-d:hover h1, .card-skill-o:hover h1 {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.card-skill-f:hover p, .card-skill-b:hover p, .card-skill-d:hover p, .card-skill-o:hover p {
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+}
