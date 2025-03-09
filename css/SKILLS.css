@@ -1,6 +1,6 @@
 .skills {
     height: auto;
-    width: 99.9vw;
+    width: 99vw;
     background-color: #eb771e;
     display: flex;
     flex-direction: column;
@@ -21,7 +21,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: stretch;
     gap: 4rem;
 }
 
@@ -63,9 +62,10 @@
 }
 
 .card-skill-f:hover, .card-skill-b:hover, .card-skill-d:hover, .card-skill-o:hover {
-    transform: scale(1.2); /* Aumenta o tamanho do card em 20% */
+    transform: scale(1.4); /* Aumenta o tamanho do card em 20% */
     box-shadow: 15px 15px 0px -1px #ffffff, 
                 20px 20px 30px -1px #3f3c3c; /* Ajusta a sombra para o novo tamanho */
+    border: solid 3px #a259ff; /* Muda a cor da borda */     
     background-color: #0acf83;
     color: #ffffff;
 }
@@ -79,4 +79,37 @@
     width: 100%;
     opacity: 1;
     visibility: visible;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .card-container {
+        width: 90svw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+        justify-content: space-around;
+        gap: 1rem;
+    }
+
+    .card-skill-f, .card-skill-b, .card-skill-d, .card-skill-o {
+        height: 100px;
+        width: 100px;
+
+        h1{
+            font-size: 0.8rem;
+        }
+
+    }
+
+    .card-skill-f:hover, .card-skill-b:hover, .card-skill-d:hover, .card-skill-o:hover {
+        transform: scale(2.4);
+        z-index: 3;
+        p{
+            font-size: 0.4rem;
+        } 
+    
+    }
 }
