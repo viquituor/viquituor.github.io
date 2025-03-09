@@ -1,0 +1,102 @@
+.experiencias {
+    height: 100VH;
+    width: 99sVW;
+    background-color: #FFDD55;
+    padding: 20px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    font-family: "montserrat";
+
+
+    h1{
+         font-weight: 900;
+         font-size: 2.5rem;
+         text-shadow: -15px 10px 15px #000000;
+            }
+
+    .card-exp{
+        height: 70vh;
+        width: 70vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #0ACF83;
+        box-shadow:-10px 10px 0px -2px #000000,
+                   -15px 15px 15px -2px #3f3c3c;
+        border-radius: 20px;
+        padding: 10rem;
+        gap: 3rem;
+
+        img{
+            width: 37rem;
+            height: auto;
+            border-radius: 10%;
+            border: solid 2.5px #000000;  
+            box-shadow: -10px -10px 0px -1px #ffdd55;
+        }
+        .text-exp{
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+
+            text-align: left;
+            gap: 2rem;
+
+            h1{
+                font-size: 1.5rem;
+                font-weight: 600;
+                text-shadow: none;
+            }
+    
+            p{
+                
+                font-weight: 500;
+                font-size: 1.2rem;
+            }
+    }
+    
+}
+
+}
+@media (max-width: 768px) {
+    .experiencias{
+        
+        width: 99.9vw;
+        height: auto;
+        padding: 5rem;
+        gap: 2rem;
+        h1{
+            font-size: 1.2rem;
+            
+        }
+
+
+
+        .card-exp{
+            width: 75svw;
+            height: auto;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 2rem;
+            img{
+                width:60svw;
+                height: auto;
+            }
+            .text-exp{
+            
+                text-align: left;
+                gap: 1rem;
+                p{
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+    
+}
