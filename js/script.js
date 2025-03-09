@@ -15,6 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
 
+    gsap.from(".card", {
+        opacity: 0,
+        y: -500, // Move para cima no início (vindo de baixo)
+        duration: 3, // Duração mais curta para uma animação mais suave
+        stagger: 2, // Atraso entre cada animação
+        immediateRender: false,
+        scrollTrigger: {
+            trigger: ".card", // Elemento que ativa a animação
+            start: "top 90%", 
+            end: "bottom top" ,// Começa quando o topo do elemento atinge 80% da tela
+            toggleActions: "play reset play reset", // Animação roda apenas uma vez
+            markers: false, // Desative os marcadores para produção
+        }
+    });
 
     gsap.from(".card-exp", {
         opacity: 0,
@@ -27,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             start: "top 90%", 
             end: "bottom top" ,// Começa quando o topo do elemento atinge 80% da tela
             toggleActions: "play reset play reset", // Animação roda apenas uma vez
-            markers: true, // Desative os marcadores para produção
+            markers: false, // Desative os marcadores para produção
         }
     });
 
