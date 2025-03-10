@@ -17,11 +17,13 @@
 }
 
 .card-container {
+    height: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 4rem;
+    padding: 2rem;
 }
 
 .card-skill-f, .card-skill-b, .card-skill-d, .card-skill-o {
@@ -97,6 +99,7 @@
         flex-wrap:wrap;
         justify-content: space-around;
         gap: 1rem;
+        padding: 1rem;
     }
 
     .card-skill-f, .card-skill-b, .card-skill-d, .card-skill-o {
@@ -113,7 +116,8 @@
         transform: scale(2.4);
         z-index: 3;
         p{
-            font-size: 0.4rem;
+            font-size: 0.5rem;
+            font-weight: 600;
         } 
     
     }

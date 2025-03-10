@@ -88,16 +88,11 @@ header{
     header{
         width: 100svw;
         position: relative;
-        flex-direction: column;
-        justify-content: start;
-        align-content: center;
-        align-items: center;
+        flex-direction: column; 
         padding-left: 1rem;
+        gap: 1rem;
         aside{
             gap: 1rem;
-            position: relative;
-            top: 6rem;
-
             h1{
                 font-size: 2rem;
             }
@@ -113,7 +108,7 @@ header{
         height: 20rem;
         position: relative;
         left: -4rem;
-        top: -3rem;
+        
 
     }
     .bt{

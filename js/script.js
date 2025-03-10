@@ -6,17 +6,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     gsap.to(".caixa", {
-        y: -350,
-        x:  350,
-        duration: 5,
+        y: -300,
+        x:  300,
+        duration: 3,
         repeat: -1, // Repetição infinita
-        yoyo: true, // Volta para a posição original
+        yoyo: false, // Volta para a posição original
         ease: "power1.inOut" // Suavização do movimento
     });
 
     gsap.to(".last-logo", {
-        y: -80,
-        duration: 3,
+        y: 20,
+        duration: 1,
         repeat: -1, // Repetição infinita
         yoyo: true, // Volta para a posição original
         ease: "power5.inOut" // Suavização do movimento
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     gsap.from(".card-exp", {
         opacity: 0,
-        y: -400, // Move para cima no início (vindo de baixo)
+        y: -200, // Move para cima no início (vindo de baixo)
         duration: 3, // Duração mais curta para uma animação mais suave
         stagger: 2, // Atraso entre cada animação
         immediateRender: false,

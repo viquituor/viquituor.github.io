@@ -6,7 +6,7 @@
     height: auto;
     width: 99vw;
     background-color: #ffdd55;
-    padding-top: 3rem;
+    padding-top: 0rem;
 
 
     .bye{
@@ -22,6 +22,7 @@
         color: #000000;
         padding: 2rem;
         text-align: center;
+        z-index: 2;
 
 
         .text{
@@ -34,7 +35,7 @@
         width: 95vw;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         align-items: end;
         align-content: end;
 
@@ -46,12 +47,15 @@
     }
 
     .last-logo{
+        height: 5rem;
+        z-index: 1;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: start;
         justify-content:start;
         gap: 10rem;
+        padding-top: 2rem;
     }
     .logo{
 
@@ -78,15 +82,38 @@
         }
     }
 }
+.ctimg{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 0rem;
+    z-index: 2;
 
+    img{
+        width: 
+        4rem;
+        height: auto;
+    }
+}
 
 @media (max-width: 768px) {
 
 
     .contatos{
+        
         width: 100svw;
         .last-logo{
             display: none;
+        }
+
+        .bye{
+            width: 90vw;
+            .text{
+                width: 80vw;
+                font-weight: 300;
+            }
         }
     
 
@@ -96,6 +123,7 @@
             justify-content: center;
             align-items: center;
             align-content: center;
+            gap: 1rem;
         }
     }
 
