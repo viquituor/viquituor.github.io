@@ -101,6 +101,7 @@ nav{
         body{
             width: 100svw;
             overflow-x: hidden;
+            box-sizing: border-box;
         }
 
         main{
