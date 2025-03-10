@@ -3,19 +3,120 @@
     width: 99vw;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem;
+    background-color: #ffdd55;
 
 
     .card-proj{
-        h1{
+       width: 75vw;
+       height: 75vh;
+       background-color: #1066e8;
+       border-radius: 30px;
+       box-shadow: 10px 10px 10px -2px #3f3c3c;
+       color: #ffffff;
 
-        }
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        padding: 3rem;
+            .text{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                gap: 2rem;
+                h1{
+                    font-size: 2rem;
+                    font-weight: 800;
+                }
+                p{
+                    font-size: 1rem;
+                    font-weight: 400;
+                }
+            }
 
-        p{
+            .img-link{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                img{
+                    width:40rem ;
+                    height: auto;
+                    border: solid 3px #fff;
+                    animation: ease-in-out;
+                }
+                img:hover{
+                    box-shadow: 10px 10px 0px -1px #000000,
+                                20px 20px 30px -1px #3f3c3c;
+                    transform:scale(1.05);
+                }
 
-        }
+                a{  padding: 1rem;
+                    font-weight: 200;
+                    background-color: #eb771e;
+                    border-radius: 20px;
+                    border: solid 3px #0acf83;
+                    box-shadow: 10px 10px 0px -1px #000000;
+                    text-decoration: none;
+                    color: black;
+                }
+                a:hover{
+                    font-weight: 500;
+                    background-color: #ffdd55;
+                    box-shadow: 10px 10px 0px -3px #fff,
+                                20px 20px 30px -2px #3f3c3c;
+                }
+            }
 
-        img{
-            
+    }
+}
+
+.display{
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .projetos{
+        height: auto;
+        width: 100svw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        padding: 2rem;
+        background-color: #ffdd55;
+
+        .card-proj{
+            height: auto;
+            flex-direction: column;
+
+            .text{
+                h1{
+                    font-size: 1.5rem;
+                }
+                p{
+                    text-align: left;
+                    font-size: 0.7rem;
+                }
+            }
+            .img-link{
+                flex-direction: column;
+                img{
+                    width: 15rem;
+                }
+            }
         }
     }
 }
