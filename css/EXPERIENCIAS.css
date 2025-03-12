@@ -12,13 +12,6 @@
     gap: 3rem;
     font-family: "montserrat";
 
-
-    h1{
-         font-weight: 900;
-         font-size: 2.5rem;
-         text-shadow: -15px 10px 15px #000000;
-            }
-
     .card-exp{
         height: 70vh;
         width: 70vw;
@@ -33,6 +26,13 @@
         gap: 3rem;
         padding: 2rem;
 
+
+        h6{
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-shadow: 2px 2px 0px #000000;
+        }
         img{
             width: 37rem;
             height: auto;
