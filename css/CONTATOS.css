@@ -82,7 +82,7 @@
         }
     }
 }
-.ctimg{
+    .ctimg{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -92,10 +92,12 @@
     z-index: 2;
 
     img{
-        width: 
-        4rem;
+        width:4rem;
         height: auto;
     }
+    img:hover{
+        transform: scale(1.4);
+}
 }
 
 @media (max-width: 768px) {
