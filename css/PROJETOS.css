@@ -49,14 +49,13 @@
                 justify-content: center;
                 align-items: center;
                 gap: 2rem;
-<<<<<<< HEAD
 
                 img, video{
                     width:40rem ;
-=======
+                }
+
                 img{
                     width:35rem ;
->>>>>>> 19c01d0715bbe450582e28445e19cae537274524
                     height: auto;
                     border: solid 3px #fff;
                     animation: ease-in-out;
