@@ -12,8 +12,8 @@
 
 
     .card-proj{
-       width: 75vw;
-       height: 75vh;
+       width: 80vw;
+       height: 80vh;
        background-color: #1066e8;
        border-radius: 30px;
        box-shadow: 10px 10px 10px -2px #3f3c3c;
@@ -29,17 +29,17 @@
             .text{
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: space-around;
                 align-items: center;
                 text-align: center;
-                gap: 2rem;
+                gap: 1rem;
                 h1{
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                     font-weight: 800;
                 }
                 p{
-                    font-size: 1rem;
-                    font-weight: 400;
+                    font-size: 0.8rem;
+                    font-weight: 500;
                 }
             }
 
@@ -49,9 +49,14 @@
                 justify-content: center;
                 align-items: center;
                 gap: 2rem;
+<<<<<<< HEAD
 
                 img, video{
                     width:40rem ;
+=======
+                img{
+                    width:35rem ;
+>>>>>>> 19c01d0715bbe450582e28445e19cae537274524
                     height: auto;
                     border: solid 3px #fff;
                     animation: ease-in-out;
