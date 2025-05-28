@@ -49,18 +49,30 @@
                 justify-content: center;
                 align-items: center;
                 gap: 2rem;
-                img{
+
+                img, video{
                     width:40rem ;
                     height: auto;
                     border: solid 3px #fff;
                     animation: ease-in-out;
+                    
                 }
                 img:hover{
                     box-shadow: 10px 10px 0px -1px #000000,
                                 20px 20px 30px -1px #3f3c3c;
-                    transform:scale(1.05);
+                    transform:scale(1.5);
+                    position: relative;
+                    left: -25rem;
                 }
 
+                video:hover{
+                    box-shadow: 10px 10px 0px -1px #000000,                                                                
+                    20px 20px 30px -1px #3f3c3c;
+                    transform:scale(1.5);
+                    position: relative;
+                    left: -25rem;
+                }
+                    
                 a{  padding: 1rem;
                     font-weight: 200;
                     background-color: #eb771e;
