@@ -24,6 +24,8 @@
         font-family: 'montserrat';
 
         img{
+            width: 400px;
+            height: auto;
             box-shadow: none;
             animation:ease-, ease-out;
         }
