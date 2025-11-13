@@ -49,6 +49,7 @@ header{
         font-family: 'montserrat';
         font-weight: 200;
         .mail, .cv{
+            transition: all 0.3s ease-in-out;
             text-align: center;
             align-content: center;
             height:60% ;
