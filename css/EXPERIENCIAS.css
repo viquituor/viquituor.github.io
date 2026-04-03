@@ -1,5 +1,5 @@
 .experiencias {
-    height: 100VH;
+    height: auto;
     width: 99sVW;
     background-color: #FFDD55;
     
@@ -33,13 +33,19 @@
             color: #ffffff;
             text-shadow: 2px 2px 0px #000000;
         }
-        img, video{
+        img{
             width: 37rem;
             height: auto;
             border-radius: 10%;
             border: solid 2.5px #000000;  
             box-shadow: -10px -10px 0px -1px #ffdd55;
         }
+        video{
+                    width:40rem ;
+                    height: auto;
+                    border: solid 3px #fff;
+                    transition: all 1s ease-in-out;
+                }
         .text-exp{
             display: flex;
             flex-direction: column;
