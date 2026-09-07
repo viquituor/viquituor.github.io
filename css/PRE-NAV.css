@@ -1,131 +1,422 @@
-@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
- 
- /* Reset */
+
+/* ============================================================
+   TOKENS — as mesmas cores de sempre, agora em um lugar só
+   ============================================================ */
+:root {
+    --amarelo:  #ffdd55;
+    --azul:     #1066e8;
+    --verde:    #0acf83;
+    --laranja:  #eb771e;
+    --roxo:     #a259ff;
+    --ciano:    #00c6ae;
+    --preto:    #000000;
+    --branco:   #ffffff;
+    --cinza:    #3f3c3c;
+
+    --sombra-dura:  10px 10px 0px -1px var(--preto);
+    --sombra-suave: 20px 20px 30px -1px var(--cinza);
+
+    --nav-h: 10vh;
+    --raio:  20px;
+
+    --transicao: 0.3s ease-in-out;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: "montserrat";
-    
+    font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-/*FONTES*/
+html {
+    scroll-behavior: smooth;
+    /* Sem isso as âncoras param embaixo da nav fixa */
+    scroll-padding-top: calc(var(--nav-h) + 1rem);
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    /* clip em vez de hidden: hidden transforma o body em contêiner de rolagem
+       e faz o ScrollTrigger calcular as posições erradas */
+    overflow-x: clip;
+    background-color: var(--amarelo);
+    color: var(--preto);
+}
+
+img, video {
+    max-width: 100%;
+}
+
+/* O <picture> some do layout e o <img> vira o item flex de verdade.
+   Sem isso o wrapper encolhe e a imagem nunca atinge a largura definida. */
+picture {
+    display: contents;
+}
 
 .megrim-regular {
     font-family: "Megrim", serif;
     font-weight: 400;
     font-style: normal;
-  }
+}
 
-
+/* O conteúdo agora nasce visível: o site não depende do JS pra existir */
 #conteudo {
-    width: auto;
-    display: none; /* Inicialmente oculto */
-    z-index: 1;
+    width: 100%;
 }
 
-/* Para garantir que o corpo fique acima do vídeo */
-body {
-    z-index: 1;
-    flex-direction: column;
-    width: 99vw;
+/* Âncora de cada seção respeita a nav fixa */
+section, header, footer {
+    scroll-margin-top: calc(var(--nav-h) + 1rem);
 }
 
-nav{
+/* ============================================================
+   ACESSIBILIDADE
+   ============================================================ */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    z-index: 999;
+    padding: 0.8rem 1.4rem;
+    background-color: var(--preto);
+    color: var(--branco);
+    font-weight: 700;
+    border-radius: 0 0 var(--raio) var(--raio);
+    transition: top var(--transicao);
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+:focus-visible {
+    outline: 3px solid var(--preto);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+nav :focus-visible,
+.contatos :focus-visible,
+.preloader :focus-visible {
+    outline-color: var(--branco);
+}
+
+/* ============================================================
+   REVELAÇÃO NO SCROLL
+
+   Tudo aqui é gated pela classe .js no <html>, que só existe
+   quando o JavaScript está vivo. Sem JS — ou se o script falhar,
+   graças ao timer de segurança no <head> — o conteúdo nasce
+   visível e o site inteiro continua legível.
+   ============================================================ */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition-delay: var(--atraso, 0ms);
+    will-change: opacity, transform;
+}
+
+.js .reveal--escala {
+    transform: translateY(30px) scale(0.92);
+}
+
+.js .reveal.visivel {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+}
+
+/* Dentro de um card de projeto, texto e mídia entram por lados
+   opostos — disparados pela classe do próprio card, sem observer extra */
+.js .card-proj .text,
+.js .card-proj .img-link {
+    opacity: 0;
+    transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+}
+
+.js .card-proj .text     { transform: translateX(-26px); }
+.js .card-proj .img-link { transform: translateX(26px); }
+
+.js .card-proj.visivel .text,
+.js .card-proj.visivel .img-link {
+    opacity: 1;
+    transform: none;
+}
+
+/* ============================================================
+   TÍTULO DE SEÇÃO — padrão reaproveitado em todas as seções
+   ============================================================ */
+.secao-titulo {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    text-align: center;
+    padding-top: 4rem;
+}
+
+/* ============================================================
+   CHIPS DE STACK — substituem as estrelas
+   ============================================================ */
+.stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+}
+
+.stack li {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.7rem;
+    border: solid 2px currentColor;
+    border-radius: 100px;
+    white-space: nowrap;
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+nav {
     position: fixed;
-    height: 10vh;
-    width: 100vw;
-    background-color: black;
+    top: 0;
+    left: 0;
+    height: var(--nav-h);
+    width: 100%;
+    background-color: var(--preto);
     border-bottom-right-radius: 36px;
     border-bottom-left-radius: 36px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    z-index: 3;
+    z-index: 100;
     gap: 1rem;
-    padding-left: 1rem;
-
-    .logo{
-        width: 3rem;
-        background-color: #ffdd55;
-        border-radius: 100px;
-        box-shadow: 8px 5px 0px -2px rgba(255,255,255,1);
-        transition: all 0.3s ease-in-out;
-        p:hover{
-            background-color: #00c6ae;
-
-        }
-  
-        p{  
-            font-size: 2rem;
-            font-family: 'megrim';
-            font-weight: 700;
-            text-align: center;
-            align-content: center;
-            border-radius: 100px;
-            border: solid 2px #050640;
-            color: #000000;
-          
-        }
-    }
-
-    .pages{
-        font-family: 'montserrat';
-        font-weight: 400;
-        width: 90vw;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 1.8rem;
-
-        a{
-            color: #ffffff;
-            font-weight: 700;
-            padding: 0.5rem;
-            transition: all 0.3s ease-in-out;
-        }
-        a:hover{
-          
-            border: solid 3px #ffdd55;
-            border-radius: 20px;
-            box-shadow: 10px 10px 0px -3px #ffffff;
-        }
-    }
-    
+    padding: 0 1rem;
 }
 
-    @media (max-width: 768px) {
-        body{
-            width: 99svw;
-            overflow-x: hidden;
-            box-sizing: border-box;
-        }
+/* Barra de progresso da rolagem */
+.scroll-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    background-color: var(--amarelo);
+    border-bottom-right-radius: 36px;
+}
 
-        main{
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-        }
-        nav{
-            width: 100svw;
-            flex-direction: column;
-            height: 10vh;
-            gap: 0rem;
-            padding: 0;
-           
+nav .logo {
+    display: block;
+    width: 3rem;
+    flex-shrink: 0;
+    background-color: var(--amarelo);
+    border-radius: 100px;
+    box-shadow: 8px 5px 0px -2px var(--branco);
+    transition: transform var(--transicao), background-color var(--transicao);
+}
 
-            .pages{
-                font-size:0.8rem ;
-                flex-wrap: wrap;
-                padding: 0;
+nav .logo:hover {
+    transform: rotate(-8deg) scale(1.08);
+    background-color: var(--ciano);
+}
 
-                
-            }
-        }
+nav .logo p {
+    font-size: 2rem;
+    font-family: "Megrim", serif;
+    font-weight: 700;
+    text-align: center;
+    align-content: center;
+    border-radius: 100px;
+    border: solid 2px #050640;
+    color: var(--preto);
+}
+
+nav .pages {
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+nav .pages a {
+    position: relative;
+    color: var(--branco);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.5rem;
+    white-space: nowrap;
+    transition: color var(--transicao), border var(--transicao), box-shadow var(--transicao);
+    border: solid 3px transparent;
+    border-radius: var(--raio);
+}
+
+nav .pages a:hover {
+    border-color: var(--amarelo);
+    box-shadow: 10px 10px 0px -3px var(--branco);
+}
+
+/* Link da seção que está na tela */
+nav .pages a.ativo {
+    color: var(--amarelo);
+    border-color: var(--amarelo);
+}
+
+/* ============================================================
+   LIGHTBOX — substitui o hover que jogava a imagem pra fora da tela
+   ============================================================ */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.92);
+    opacity: 0;
+    transition: opacity var(--transicao);
+}
+
+.lightbox[hidden] {
+    display: none;
+}
+
+.lightbox.aberto {
+    opacity: 1;
+}
+
+.lightbox__img {
+    max-width: 95vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    border: solid 3px var(--branco);
+    border-radius: 10px;
+    box-shadow: var(--sombra-dura);
+}
+
+.lightbox__close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--preto);
+    background-color: var(--amarelo);
+    border: solid 3px var(--preto);
+    border-radius: 100px;
+    transition: transform var(--transicao);
+}
+
+.lightbox__close:hover {
+    transform: scale(1.15) rotate(90deg);
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+    :root {
+        --nav-h: 4.5rem;
     }
+
+    main {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        gap: 0.6rem;
+        padding: 0 0.6rem;
+        border-bottom-right-radius: 24px;
+        border-bottom-left-radius: 24px;
+    }
+
+    nav .logo {
+        width: 2.4rem;
+    }
+
+    nav .logo p {
+        font-size: 1.5rem;
+    }
+
+    /* Sem hambúrguer: os links viram uma faixa que rola na horizontal.
+       Nada fica escondido e não depende de JS. */
+    nav .pages {
+        gap: 0.4rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        justify-content: flex-start;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        padding: 0.25rem 0;
+    }
+
+    nav .pages::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav .pages a {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.5rem;
+        border-width: 2px;
+    }
+
+    nav .pages a:hover {
+        box-shadow: none;
+    }
+
+    .secao-titulo {
+        padding-top: 2.5rem;
+    }
+}
+
+/* ============================================================
+   MOVIMENTO REDUZIDO — respeita quem tem sensibilidade vestibular
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    /* Nada de entrada por scroll: o conteúdo já nasce no lugar */
+    .js .reveal,
+    .js .reveal--escala,
+    .js .card-proj .text,
+    .js .card-proj .img-link {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

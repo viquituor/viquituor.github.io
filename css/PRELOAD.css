@@ -1,46 +1,110 @@
-/* Preloader */
-#preloader {
-    width: 100vw;
-    height: 100vh;
+/* ============================================================
+   PRELOADER
+   Cobre a tela como overlay fixo e sai sozinho por animação CSS.
+   Se o JavaScript não carregar, o site continua utilizável.
+   ============================================================ */
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000000;
-    z-index: 999;
+    background-color: var(--preto);
+    animation: preloader-sai 0.6s ease 2.6s forwards;
 }
 
-#preloader p {
-    font-family: Impact, Haettenschweiler, sans-serif;
-    font-weight: 200;
-    font-size: 5rem;
-    border: solid #ffdd55;
-    animation: spin 4s linear infinite;
-    color: #ffffff;
+/* O JS adiciona esta classe assim que os assets terminam, cortando a espera */
+.preloader.pronto {
+    animation: preloader-sai 0.6s ease forwards;
 }
 
+.preloader[hidden] {
+    display: none;
+}
+
+@keyframes preloader-sai {
+    to {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
+.preloader__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+/* --- Letras em arco --- */
 .curved-text {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
-    animation: spin 5s linear infinite;
+    gap: 0.1rem;
 }
 
 .curved-text span {
     display: inline-block;
-    transform-origin: center center;
-    transform: rotate(-10deg);
-    margin-left: -5px;
+    font-family: "Megrim", Impact, sans-serif;
+    font-size: clamp(2rem, 9vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--branco);
+    /* Cada letra sobe em sequência, formando o arco */
+    animation: letra-pulsa 1.6s ease-in-out infinite;
 }
 
-.curved-text span:nth-child(even) {
-    transform: rotate(10deg);
+.curved-text span:nth-child(1) { transform: rotate(-20deg) translateY(14px); animation-delay: 0.00s; }
+.curved-text span:nth-child(2) { transform: rotate(-15deg) translateY(6px);  animation-delay: 0.08s; }
+.curved-text span:nth-child(3) { transform: rotate(-10deg) translateY(1px);  animation-delay: 0.16s; }
+.curved-text span:nth-child(4) { transform: rotate(-5deg)  translateY(-2px); animation-delay: 0.24s; }
+.curved-text span:nth-child(5) { transform: rotate(0deg)   translateY(-4px); animation-delay: 0.32s; }
+.curved-text span:nth-child(6) { transform: rotate(5deg)   translateY(-2px); animation-delay: 0.40s; }
+.curved-text span:nth-child(7) { transform: rotate(10deg)  translateY(1px);  animation-delay: 0.48s; }
+.curved-text span:nth-child(8) { transform: rotate(15deg)  translateY(6px);  animation-delay: 0.56s; }
+.curved-text span:nth-child(9) { transform: rotate(20deg)  translateY(14px); animation-delay: 0.64s; }
+
+@keyframes letra-pulsa {
+    0%, 100% { color: var(--branco); }
+    50%      { color: var(--amarelo); }
 }
 
-/* Animação de rotação */
+/* --- Barra de progresso real --- */
+.preloader__bar {
+    width: min(60vw, 22rem);
+    height: 10px;
+    background-color: transparent;
+    border: solid 2px var(--branco);
+    border-radius: 100px;
+    overflow: hidden;
+}
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    50% { transform: rotate(180deg); }
-    100% { transform: rotate(360deg); }
+.preloader__bar i {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background-color: var(--amarelo);
+    transition: width 0.25s ease-out;
+}
+
+.preloader__pct {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    color: var(--branco);
+}
+
+/* Quem pediu menos movimento vê o preloader sair na hora */
+@media (prefers-reduced-motion: reduce) {
+    .preloader {
+        animation: preloader-sai 0.001ms linear 0.4s forwards;
+    }
+
+    .curved-text span {
+        animation: none;
+        transform: none;
+    }
 }

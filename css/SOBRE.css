@@ -1,144 +1,104 @@
-.sobre{
-    height: 100vh;
-    width: 99vw;
-    background-color: #ffdd55;
-    
-    
+/* ============================================================
+   SOBRE MIM
+   ============================================================ */
+.sobre {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--amarelo);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 4rem 2rem;
+}
 
-    .card{
-        height: 75svh;
-        width: 75vw;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        background-color: #1066e8;
-        box-shadow: 10px 10px 10px -2px #3f3c3c;
-        border-radius: 20px;
-        padding: 2rem;
-        gap: 3rem;
+.sobre .card {
+    width: min(75vw, 76rem);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    background-color: var(--azul);
+    color: var(--branco);
+    box-shadow: var(--sombra-dura), var(--sombra-suave);
+    border-radius: var(--raio);
+    padding: 3rem;
+}
 
-        font-family: 'montserrat';
+.sobre .foto-sobre {
+    width: 260px;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: var(--raio);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
 
-        img{
-            width: 400px;
-            height: auto;
-            box-shadow: none;
-            animation:ease-, ease-out;
-        }
+.sobre .foto-sobre:hover {
+    transform: scale(1.03) rotate(-2deg);
+    box-shadow: var(--sombra-dura), var(--sombra-suave);
+}
 
-        img:hover{
-            box-shadow: 10px 10px 0px -1px #000000,
-                        20px 20px 30px -1px #3f3c3c;
-            transform:scale(1.01);
-        }
-.texto-sobre{
+.sobre .texto-sobre {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 2rem;
-
-
-            h1{
-            font-size: 3rem;
-            font-weight: 800;
-        }
-            h2{
-            font-size: 2rem;
-            font-weight: 300;
-        }
-            p{
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-}
-        
-        .bt{
-            height: 10vh;
-            display: flex;
-            flex-direction: row;
-            justify-content: start;
-            gap: 2rem;
-            padding-top: 1rem;
-        
-            font-size: 1.3rem;
-            font-family: 'montserrat';
-            font-weight: 200;
-            .mail, .cv{
-                text-align: center;
-                align-content: center;
-                height:60% ;
-                width: 30%;
-                background-color: #000000;
-                color: #ffffff;
-                border: solid 2px #ffdd55;
-                border-radius: 200px;
-                box-shadow: 10px 10px 0px -1px,
-                            20px 20px 30px -1px #3f3c3c;
-    
-    
-            }
-         .mail:hover, .cv:hover{
-            background-color: #ffffff;
-            color: #000000;           
-             box-shadow: 10px 10px 0px -1px #000000,
-                         20px 20px 30px -1px #3f3c3c;
-         }
-         
-    }
-}
+    gap: 1.2rem;
 }
 
+.sobre .texto-sobre h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+/* Amarelo sobre este azul dá só 3.85:1 — reprovado no WCAG AA para
+   texto deste tamanho. Branco sobre o mesmo azul dá 5.14:1 e o
+   destaque continua vindo do peso da fonte. */
+.sobre .texto-sobre .subtitulo {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-weight: 600;
+    color: var(--branco);
+    opacity: 0.9;
+}
+
+.sobre .texto-sobre p {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.65;
+}
+
+.sobre .texto-sobre strong {
+    font-weight: 800;
+    color: var(--branco);
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
 @media (max-width: 768px) {
+    .sobre {
+        min-height: auto;
+        padding: 3rem 1.5rem;
+    }
 
-    .sobre{
-        width: 100svw;
-        height:auto;
-        padding-bottom: 2rem;
+    .sobre .card {
+        width: 100%;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 1.5rem;
+        box-shadow: 6px 6px 0px -1px var(--preto);
+    }
 
-        .card{
-            padding-top: 2rem;
-            margin: 0;
-            display: flex;
-            gap: 3rem;
-            width: 80svw;
-            height: fit-content;
-            flex-direction: column;
-            justify-content: space-around;
-            img{
-                display: none;
-             /* Remove do fluxo do layout */
-            }
+    /* A foto some no mobile: o texto é o que importa nessa tela */
+    .sobre .foto-sobre {
+        display: none;
+    }
 
+    .sobre .texto-sobre {
+        gap: 1rem;
+    }
 
-            .texto-sobre{
-             
-
-                width: 70svw;
-                h1{
-                    font-size: 2.7rem;
-
-                }
-                h2{
-                    font-size: 1.3rem;
-                }
-                p{
-                    font-size: 1.1rem ;
-                    
-                }
-
-            }
-            
-            .bt{
-                height: 15svh;
-                width: 90svw;
-                font-size: 0.7rem;
-            }
-        }
-}
-
+    .sobre .texto-sobre p {
+        font-size: 0.95rem;
+    }
 }

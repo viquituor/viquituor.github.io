@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>viquituor</title>
-    <link rel="icon" type="image/png" href="img/icone-web-tulla.jpg">
+
+    <title>Paulo Victor — Desenvolvedor Full Stack</title>
+    <meta name="description" content="Paulo Victor Almeida de Oliveira — desenvolvedor full stack. React, TypeScript, Node.js, NestJS e MySQL. Criador do Selo Jurídico e do Selo Fiscal.">
+    <meta name="author" content="Paulo Victor Almeida de Oliveira">
+    <meta name="theme-color" content="#ffdd55">
+    <link rel="canonical" href="https://viquituor.github.io/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://viquituor.github.io/">
+    <meta property="og:site_name" content="Paulo Victor — Portfólio">
+    <meta property="og:title" content="Paulo Victor — Desenvolvedor Full Stack">
+    <meta property="og:description" content="React, TypeScript, Node.js, NestJS e MySQL. Criador do Selo Jurídico e do Selo Fiscal.">
+    <meta property="og:image" content="https://viquituor.github.io/img/perfil.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Paulo Victor — Desenvolvedor Full Stack">
+    <meta name="twitter:description" content="React, TypeScript, Node.js, NestJS e MySQL. Criador do Selo Jurídico e do Selo Fiscal.">
+    <meta name="twitter:image" content="https://viquituor.github.io/img/perfil.jpg">
+
+    <link rel="icon" type="image/png" href="img/perfil-de-usuario.png">
+    <link rel="apple-touch-icon" href="img/perfil-de-usuario.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="css/PRE-NAV.css">
     <link rel="stylesheet" href="css/HEADER.css">
     <link rel="stylesheet" href="css/PRELOAD.css">
@@ -12,357 +35,683 @@
     <link rel="stylesheet" href="css/EXPERIENCIAS.css">
     <link rel="stylesheet" href="css/SKILLS.css">
     <link rel="stylesheet" href="css/PROJETOS.css">
+    <link rel="stylesheet" href="css/FORMACAO.css">
     <link rel="stylesheet" href="css/CONTATOS.css">
+
+    <script>
+        // Liga as animações de entrada só quando há JavaScript.
+        // Se o script principal não confirmar que assumiu o controle,
+        // a classe cai e todo o conteúdo aparece — nunca uma página em branco.
+        document.documentElement.classList.add('js');
+        setTimeout(function () {
+            if (!window.__revelacaoAtiva) {
+                document.documentElement.classList.remove('js');
+            }
+        }, 2500);
+    </script>
 </head>
 <body>
 
-
-
-    <section class="animatebg" id="preloader">
-      <div class="curved-text">
-        <span><p>V</p></span>
-        <span><p>I</p></span>
-        <span><p>Q</p></span>
-        <span><p>U</p></span>
-        <span><p>I</p></span>
-        <span><p>T</p></span>
-        <span><p>U</p></span>
-        <span><p>O</p></span>
-        <span><p>R</p></span>
+    <!-- ============ PRELOADER ============ -->
+    <!-- Sai sozinho por animação CSS: se o JS falhar, o site continua acessível. -->
+    <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Carregando o site">
+        <div class="preloader__inner">
+            <div class="curved-text" aria-hidden="true">
+                <span>V</span><span>I</span><span>Q</span><span>U</span><span>I</span><span>T</span><span>U</span><span>O</span><span>R</span>
+            </div>
+            <div class="preloader__bar"><i id="preloader-fill"></i></div>
+            <p class="preloader__pct" id="preloader-pct">0%</p>
+        </div>
     </div>
-    </section>
+
+    <a class="skip-link" href="#main">Pular para o conteúdo principal</a>
 
     <div id="conteudo">
 
-    <nav>
-        <div class="logo"><p>V</p></div>
+    <!-- ============ NAV ============ -->
+    <nav aria-label="Navegação principal">
+        <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+        <a class="logo" href="#topo" aria-label="Voltar ao início"><p aria-hidden="true">V</p></a>
         <div class="pages">
-            <p><a href="#conteudo">HOME</a></p>
-            <p><a href="#sobre">SOBRE MIM</a></p>
-            <p><a href="#exp">EXPERIENCIAS</a></p>
-            <p><a href="#skills">SKILLS</a></p>
-            <p><a href="#proj">PROJETOS</a></p>
-            <p><a href="#cont">CONTATOS</a></p>
+            <a href="#topo">HOME</a>
+            <a href="#sobre">SOBRE MIM</a>
+            <a href="#exp">EXPERIÊNCIAS</a>
+            <a href="#skills">SKILLS</a>
+            <a href="#proj">PROJETOS</a>
+            <a href="#formacao">FORMAÇÃO</a>
+            <a href="#cont">CONTATO</a>
         </div>
     </nav>
 
-        <header>
-            <aside>
-                <h1>HELLO WORLD,<div class="caixa">🚀</div></h1>
-                <h2>Eu sou PAULO VICTOR</h2>
-                <h3>|| Desenvolvedor Web E Mobile || </h3>
-                <div class="bt">
-                    <a class="mail" href="mailto:vitoralmeide@gmail.com">ME CONTRATE</a>
-                    <a class="cv" href="img/PAULO VICTOR __ FRONT-END - 26 (3).pdf" download="PAULOVICTOR_ALMEIDADEOLIVEIRA_Currículo (3).pdf">CURRICULO</a>
-                </div>
-            </aside>
+    <!-- ============ HEADER ============ -->
+    <header id="topo">
+        <aside>
+            <h2 class="hello">HELLO WORLD,<span class="caixa" aria-hidden="true">🚀</span></h2>
+            <h1 class="nome" data-split>Paulo Victor</h1>
+            <p class="cargo">Desenvolvedor Full Stack</p>
+            <p class="tagline">React · TypeScript · Node.js · NestJS · MySQL</p>
+            <div class="bt">
+                <a class="mail" href="mailto:vitoralmeide@gmail.com">ME CONTRATE</a>
+                <a class="cv" href="doc/curriculo-paulo-victor.pdf" download="Paulo-Victor-Almeida-de-Oliveira-Curriculo.pdf" type="application/pdf">CURRÍCULO</a>
+            </div>
+        </aside>
 
-              <img class="foto" src="img/perfil.jpg" alt="foto de paulo victor">
-        </header>
+        <picture>
+            <source srcset="img/perfil.webp" type="image/webp">
+            <img class="foto" src="img/perfil.jpg" width="900" height="1200" alt="Retrato de Paulo Victor Almeida de Oliveira" fetchpriority="high" decoding="async">
+        </picture>
+    </header>
 
-        <main>
-            <section class="sobre" id="sobre">
-                <div class="card">
-                    <img class="foto" src="img/perfil-de-usuario.png" alt="foto de paulo victor">
-                    <div class="texto-sobre">
-                        <h1>SOBRE MIM</h1>
-                        <h2>|| Desenvolvedor WEB E MOBILE ||</h2>
-                        <p>E aí, tudo bem? Eu sou o Paulo Victor, um apaixonado por tecnologia, desafios instigantes! Desde pequeno,
-                        sempre fui curioso sobre como as coisas funcionam, o que me levou a mergulhar no mundo da programação. Atualmente, 
-                        curso Sistemas de Informação no Instituto Federal da Bahia (IFBA) e estou constantemente explorando novas tecnologias e metodologias para aprimorar minhas habilidades. 
-                        Tenho um grande interesse em desenvolvimento web e engenharia de dados, sempre buscando unir design intuitivo e eficiência na manipulação de dados para criar soluções inovadoras.</p>
-                        <div class="bt">
-                            <a class="mail" href="mailto:vitoralmeide@gmail.com">ME CONTRATE</a>
-                            <a class="cv" href="img/PAULO VICTOR __ FRONT-END - 26 (3).pdf" download="PAULOVICTOR_ALMEIDADEOLIVEIRA_Currículo (3).pdf">CURRICULO</a>
-                        </div>
+    <main id="main">
+
+        <!-- ============ SOBRE ============ -->
+        <section class="sobre" id="sobre" aria-labelledby="sobre-titulo">
+            <div class="card reveal">
+                <picture>
+                    <source srcset="img/avatar.webp" type="image/webp">
+                    <img class="foto-sobre" src="img/perfil-de-usuario.png" width="512" height="512" alt="" loading="lazy" decoding="async">
+                </picture>
+                <div class="texto-sobre">
+                    <h2 id="sobre-titulo">SOBRE MIM</h2>
+                    <p class="subtitulo">Desenvolvedor Full Stack · Vitória da Conquista, BA</p>
+                    <p>
+                        Sou o Paulo Victor. Estudo Sistemas de Informação no IFBA e construo software que
+                        realmente entra em produção — não só protótipo de sala de aula.
+                    </p>
+                    <p>
+                        Hoje meu trabalho principal são os produtos <strong>Selo Systems</strong>: o
+                        <strong>Selo Jurídico</strong>, plataforma de gestão que já roda em um escritório de
+                        advocacia real, e o <strong>Selo Fiscal</strong>, um SaaS multi-tenant de emissão de
+                        NF-e e NFC-e. Nos dois eu cuido do ciclo inteiro: modelagem do banco, API, interface e deploy.
+                    </p>
+                    <p>
+                        Antes disso passei pela engenharia de dados na Compass UOL (AWS, Spark, pipelines) e pelo
+                        front-end no CEPEDI. Venho da música, e a teoria musical me deixou um jeito específico de
+                        pensar: reconhecer padrões e abstrair estrutura antes de escrever a primeira linha.
+                    </p>
+                    <p>
+                        Essas duas metades se encontram no meu <strong>TCC</strong>: uma plataforma que usa IA para
+                        reconhecer acordes por áudio e ensinar música com validação em tempo real.
+                    </p>
+                    <div class="bt">
+                        <a class="mail" href="mailto:vitoralmeide@gmail.com">ME CONTRATE</a>
+                        <a class="cv" href="doc/curriculo-paulo-victor.pdf" download="Paulo-Victor-Almeida-de-Oliveira-Curriculo.pdf" type="application/pdf">CURRÍCULO</a>
                     </div>
-
                 </div>
-            </section>
+            </div>
+        </section>
 
+        <!-- ============ EXPERIÊNCIAS ============ -->
+        <section id="exp" class="experiencias" aria-labelledby="exp-titulo">
+            <h2 class="secao-titulo reveal" id="exp-titulo">EXPERIÊNCIAS</h2>
 
-            <section id="exp" class="experiencias">
-
-                <div class="card-exp">
+            <article class="card-exp sem-midia reveal">
                 <div class="text-exp">
-                    <h1>DESENVOLVEDOR FRONT-END (BOLSISTA) - CEPEDI</h1>
-                    <h6>09/2025 - 02/2026</h6>
+                    <h3>Desenvolvedor Front-End Júnior — CEPEDI</h3>
+                    <p class="periodo">05/2026 — 07/2026 · Projeto GIPAR / IFBA</p>
                     <p>
-                        Atuei na construção de aplicações web escaláveis (SPAs) utilizando React.js. Apliquei princípios de Clean Code na criação de componentes modulares de alta performance, gerindo estados complexos com Hooks e integrando com APIs RESTful.
-                    </p>
-                    <p>
-                        Foquei fortemente na interface e experiência do utilizador (UI/UX), traduzindo protótipos de alta fidelidade do Figma em ecrãs "pixel-perfect", assegurando 100% de responsividade e conformidade com as diretrizes de acessibilidade (WCAG).
-                    </p>
-                    <p>
-                        Trabalhando em equipa sob metodologias ágeis (Scrum), utilizei a capacidade de abstração e o reconhecimento de padrões — habilidades que trago da teoria musical — para resolver desafios complexos de renderização e fluxo de dados.
-                    </p>
-                </div>
-                <img src="img/cepedi-proejto-final.jfif" alt="Imagem representativa do desenvolvimento Front-End no CEPEDI">
-                </div>
-                <div class="card-exp">
-                    <div class="text-exp">
-                        <h1>DESENVOLVEDOR FULL STACK - ADVOCACIA ALMEIDA</h1>
-                        <h6>10/2024 - 05/2025</h6>
-                        <p>
-                            Fui o responsável técnico pela arquitetura e desenvolvimento de ponta a ponta de um sistema de gestão jurídica. Construí uma API RESTful robusta em Node.js/Express com persistência em base de dados SQL e uma interface dinâmica em React.js.
-                        </p>
-                        <p>
-                            Liderei a digitalização do escritório, desenvolvendo painéis de controlo (dashboards) e módulos complexos para a gestão integrada de clientes, contratos, processos judiciais, pagamentos e agenda.
-                        </p>
-                        <p>
-                            Apliquei princípios de Design Centrado no Utilizador (DCU) para entregar uma plataforma totalmente responsiva. Esta abordagem reduziu drasticamente a carga cognitiva dos advogados e otimizou o tempo gasto em tarefas administrativas diárias.
-                        </p>
-                    </div>
-                    <video controls autoplay loop muted>
-                            <source src="/img/Sistema.mp4" type="video/mp4" alt="video do projeto de sistema de gestão jurídica">
-                            Seu navegador não suporta vídeos HTML5. 
-                            </video>
-                </div>
-                <div class="card-exp">
-                    <div class="text-exp">
-                     <h1>COMPASS UOL SCHOLLARSHIP - AWS DATA CLOUD ENGINEERING</h1>
-                     <h6>04/2024 - 10/2024</h6>
-                     <p>
-                        Durante meu estágio na Compass UOL, atuei na engenharia de dados, desenvolvendo pipelines para ingestão, processamento e modelagem de dados. Utilizei AWS S3, Glue, Lambda e Apache Spark para otimizar fluxos de dados e automatizei processos com Docker e GitHub Actions.
-                     </p>
-                     <p>
-                        Também desenvolvi um dashboard interativo no Amazon QuickSight, criando gráficos e relatórios para facilitar a tomada de decisão baseada em dados estruturados.
+                        Atuei no desenvolvimento do sistema de gerenciamento de equipamentos do
+                        <strong>GIPAR</strong>, no Instituto Federal da Bahia, construindo as telas de
+                        cadastro e controle do inventário.
                     </p>
                     <p>
-                         Esse estágio consolidou minha experiência em big data, computação em nuvem e engenharia de dados, fortalecendo minha capacidade de criar soluções escaláveis e eficientes.
+                        Trabalhei em colaboração com uma equipe de desenvolvedores, integrando o front-end
+                        à API do sistema e acompanhando o fluxo de revisão de código do time.
                     </p>
-                    </div>
-                    <img src="img/dashboard_page-0001.jpg" alt="imagem do dashboard do projeto final">
+                    <ul class="stack" aria-label="Tecnologias usadas">
+                        <li>React</li><li>JavaScript</li><li>API REST</li><li>Git</li>
+                    </ul>
                 </div>
-                
-            </section>
+            </article>
 
+            <article class="card-exp reveal">
+                <div class="text-exp">
+                    <h3>Desenvolvedor Front-End (Bolsista) — CEPEDI</h3>
+                    <p class="periodo">09/2025 — 02/2026 · Programa Futuro Digital</p>
+                    <p>
+                        Desenvolvi interfaces em <strong>React</strong>, criando componentes modulares e
+                        reutilizáveis, gerenciando estado com Hooks e consumindo APIs REST.
+                    </p>
+                    <p>
+                        Traduzi protótipos do Figma em telas fiéis ao design, com responsividade completa e
+                        atenção às diretrizes de acessibilidade (WCAG).
+                    </p>
+                    <p>
+                        Trabalho em equipe sob metodologia ágil (Scrum), com entregas revisadas por pares.
+                    </p>
+                    <ul class="stack" aria-label="Tecnologias usadas">
+                        <li>React</li><li>JavaScript</li><li>Tailwind</li><li>Figma</li><li>Scrum</li>
+                    </ul>
+                </div>
+                <picture>
+                    <source srcset="img/cepedi.webp" type="image/webp">
+                    <img src="img/cepedi.jpg" width="1024" height="576" loading="lazy" decoding="async" alt="Interface desenvolvida durante o programa Futuro Digital do CEPEDI">
+                </picture>
+            </article>
 
-            <section class="skills" id="skills">
+            <article class="card-exp reveal">
+                <div class="text-exp">
+                    <h3>Desenvolvedor Full Stack — Advocacia Almeida</h3>
+                    <p class="periodo">10/2024 — 05/2025</p>
+                    <p>
+                        Fui o responsável técnico pela arquitetura e pelo desenvolvimento de ponta a ponta do
+                        sistema de gestão do escritório — hoje o produto <strong>Selo Jurídico</strong>.
+                    </p>
+                    <p>
+                        Construí a API REST em <strong>Node.js e Express</strong> com MySQL, autenticação por
+                        JWT e controle de acesso por papel, e a interface em <strong>React</strong>.
+                    </p>
+                    <p>
+                        Entreguei sete módulos integrados: advogados, clientes, contratos, processos, pagamentos,
+                        agenda e prazos processuais — substituindo o controle em planilhas e papel do escritório.
+                    </p>
+                    <ul class="stack" aria-label="Tecnologias usadas">
+                        <li>React</li><li>Node.js</li><li>Express</li><li>MySQL</li><li>JWT</li>
+                    </ul>
+                </div>
+                <video class="video" controls muted loop playsinline preload="none" poster="img/sistema-poster.jpg" width="1280" height="720" aria-label="Demonstração em vídeo do sistema Selo Jurídico">
+                    <source src="img/sistema-juridico.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo HTML5.
+                </video>
+            </article>
 
+            <article class="card-exp reveal">
+                <div class="text-exp">
+                    <h3>Estágio em Engenharia de Dados — Compass UOL</h3>
+                    <p class="periodo">04/2024 — 09/2024 · AWS Data Cloud Engineering Scholarship</p>
+                    <p>
+                        Desenvolvi pipelines de ingestão, processamento e modelagem de dados usando
+                        <strong>AWS S3, Glue, Lambda</strong> e <strong>Apache Spark</strong>.
+                    </p>
+                    <p>
+                        Automatizei processos com Python, Docker e GitHub Actions, reduzindo etapas manuais
+                        no fluxo de dados.
+                    </p>
+                    <p>
+                        Construí um dashboard interativo no <strong>Amazon QuickSight</strong>, com gráficos e
+                        relatórios para apoiar decisões baseadas em dados.
+                    </p>
+                    <ul class="stack" aria-label="Tecnologias usadas">
+                        <li>Python</li><li>Apache Spark</li><li>AWS S3</li><li>AWS Glue</li><li>AWS Lambda</li><li>QuickSight</li><li>Docker</li>
+                    </ul>
+                </div>
+                <picture>
+                    <source srcset="img/dashboard.webp" type="image/webp">
+                    <img src="img/dashboard.jpg" width="1600" height="1223" loading="lazy" decoding="async" alt="Dashboard interativo construído no Amazon QuickSight">
+                </picture>
+            </article>
+        </section>
 
+        <!-- ============ SKILLS ============ -->
+        <section class="skills" id="skills" aria-labelledby="skills-titulo">
+            <h2 class="secao-titulo reveal" id="skills-titulo">SKILLS</h2>
+            <p class="skills-nota">Cada tecnologia com o projeto real onde eu usei ela.</p>
 
-                    <h2>FRONT-END</h2>
-                   <div class="card-container">
+            <h3 class="skills-cat">FRONT-END</h3>
+            <div class="card-container">
+                <div class="card-skill-f reveal reveal--escala" tabindex="0"><h4>HTML5</h4><p>Estrutura semântica e acessível em todos os projetos.</p></div>
+                <div class="card-skill-f reveal reveal--escala" tabindex="0"><h4>CSS3</h4><p>Flexbox, Grid, responsividade e animação. Este portfólio é CSS puro.</p></div>
+                <div class="card-skill-f reveal reveal--escala" tabindex="0"><h4>JavaScript</h4><p>ES6+, DOM e assíncrono. Gerador ALTO EM e Fluxograma UFBA.</p></div>
+                <div class="card-skill-f reveal reveal--escala" tabindex="0"><h4>TypeScript</h4><p>Front-end e back-end do Selo Fiscal, e o app mobile em Expo.</p></div>
+                <div class="card-skill-f reveal reveal--escala" tabindex="0"><h4>React</h4><p>Selo Jurídico, Selo Fiscal, site da Pós-Graduação do IFBA e Locadora.</p></div>
+                <div class="card-skill-f reveal reveal--escala" tabindex="0"><h4>React Native</h4><p>App mobile com Expo e Expo Router: navegação nativa e acesso à galeria.</p></div>
+                <div class="card-skill-f reveal reveal--escala" tabindex="0"><h4>Vite</h4><p>Build e dev server do Selo Fiscal e do site da Pós-Graduação.</p></div>
+                <div class="card-skill-f reveal reveal--escala" tabindex="0"><h4>Tailwind CSS</h4><p>Estilização do Selo Fiscal e do site da Pós-Graduação do IFBA.</p></div>
+                <div class="card-skill-f reveal reveal--escala" tabindex="0"><h4>styled-components</h4><p>Sistema de estilos do Selo Jurídico.</p></div>
+                <div class="card-skill-f reveal reveal--escala" tabindex="0"><h4>React Router</h4><p>Roteamento das SPAs do Selo Jurídico e da Pós-Graduação.</p></div>
+                <div class="card-skill-f reveal reveal--escala" tabindex="0"><h4>GSAP</h4><p>Animação e ScrollTrigger deste portfólio e da landing de viagens.</p></div>
+                <div class="card-skill-f reveal reveal--escala" tabindex="0"><h4>Figma</h4><p>Prototipagem e leitura de design no CEPEDI.</p></div>
+            </div>
 
-                        <div class="card-skill-f"><h1>HTML5</h1><p>|⭐⭐⭐⭐⭐| <br> Experiência sólida na criação de estruturas semânticas e acessíveis. Utilizado em diversos projetos pessoais e profissionais.</p></div>
-                        <div class="card-skill-f"><h1>CSS3</h1><p>|⭐⭐⭐⭐⭐| <br> Domínio de estilização e responsividade, incluindo animações e frameworks como Tailwind CSS.</p></div>
-                        <div class="card-skill-f"><h1>JavaScript</h1><p>|⭐⭐⭐⭐☆| <br> Conhecimento avançado em manipulação do DOM, eventos e consumo de APIs.</p></div>
-                        <div class="card-skill-f"><h1>ReactJS</h1><p>|⭐⭐⭐⭐☆| <br> Uso prático em desenvolvimento de interfaces dinâmicas e otimizadas para aplicações reais.</p></div>
-                        <div class="card-skill-f"><h1>NextJS</h1><p>|⭐⭐⭐☆☆| <br> Experiência com SSR e otimização de performance em projetos.</p></div>
-                        <div class="card-skill-f"><h1>Figma</h1><p>|⭐⭐⭐⭐☆| <br> Utilizado para prototipagem e criação de interfaces intuitivas.</p></div>
-                        <div class="card-skill-f"><h1>GSAP</h1><p>|⭐⭐⭐⭐☆| <br> Utilizado para animações avançadas e interações dinâmicas em interfaces web.</p></div>
+            <h3 class="skills-cat">BACK-END</h3>
+            <div class="card-container">
+                <div class="card-skill-b reveal reveal--escala" tabindex="0"><h4>Node.js</h4><p>APIs REST do Selo Jurídico, Locadora e monitor de rede.</p></div>
+                <div class="card-skill-b reveal reveal--escala" tabindex="0"><h4>Express</h4><p>API de sete módulos do Selo Jurídico.</p></div>
+                <div class="card-skill-b reveal reveal--escala" tabindex="0"><h4>NestJS</h4><p>Arquitetura modular da API do Selo Fiscal, em TypeScript.</p></div>
+                <div class="card-skill-b reveal reveal--escala" tabindex="0"><h4>Python</h4><p>Automação, processamento de linguagem natural e engenharia de dados.</p></div>
+                <div class="card-skill-b reveal reveal--escala" tabindex="0"><h4>Flask</h4><p>API que serve o motor de IA do FazendeiroBot.</p></div>
+                <div class="card-skill-b reveal reveal--escala" tabindex="0"><h4>Java</h4><p>Programação orientada a objetos e paradigmas de linguagens.</p></div>
+                <div class="card-skill-b reveal reveal--escala" tabindex="0"><h4>API REST</h4><p>Projeto e consumo de APIs em todos os sistemas full stack.</p></div>
+                <div class="card-skill-b reveal reveal--escala" tabindex="0"><h4>JWT &amp; bcrypt</h4><p>Autenticação e controle de acesso por papel nos dois Selos.</p></div>
+                <div class="card-skill-b reveal reveal--escala" tabindex="0"><h4>BullMQ &amp; Redis</h4><p>Fila assíncrona de processamento do Selo Fiscal.</p></div>
+                <div class="card-skill-b reveal reveal--escala" tabindex="0"><h4>Nodemailer &amp; cron</h4><p>Envio diário automático de alertas de prazo no Selo Jurídico.</p></div>
+                <div class="card-skill-b reveal reveal--escala" tabindex="0"><h4>Jest</h4><p>Testes unitários e de integração com supertest no Selo Fiscal.</p></div>
+                <div class="card-skill-b reveal reveal--escala" tabindex="0"><h4>Socket.io</h4><p>Monitor de banda em tempo real via SNMP e SSH.</p></div>
+            </div>
 
+            <h3 class="skills-cat">DADOS &amp; CLOUD</h3>
+            <div class="card-container">
+                <div class="card-skill-d reveal reveal--escala" tabindex="0"><h4>MySQL</h4><p>Modelagem e queries dos dois Selos e da Locadora.</p></div>
+                <div class="card-skill-d reveal reveal--escala" tabindex="0"><h4>Prisma</h4><p>ORM e migrations versionadas do Selo Fiscal.</p></div>
+                <div class="card-skill-d reveal reveal--escala" tabindex="0"><h4>Apache Spark</h4><p>Processamento de grandes volumes no estágio da Compass UOL.</p></div>
+                <div class="card-skill-d reveal reveal--escala" tabindex="0"><h4>AWS Glue</h4><p>ETL e automação de pipelines de dados.</p></div>
+                <div class="card-skill-d reveal reveal--escala" tabindex="0"><h4>AWS S3</h4><p>Data lake do pipeline e storage de certificados do Selo Fiscal.</p></div>
+                <div class="card-skill-d reveal reveal--escala" tabindex="0"><h4>AWS Lambda</h4><p>Funções serverless para automação de tarefas do pipeline.</p></div>
+                <div class="card-skill-d reveal reveal--escala" tabindex="0"><h4>QuickSight</h4><p>Dashboards interativos do projeto final da Compass UOL.</p></div>
+                <div class="card-skill-d reveal reveal--escala" tabindex="0"><h4>Docker</h4><p>Containerização de ambientes de dados e do MinIO local.</p></div>
+            </div>
+
+            <h3 class="skills-cat">FERRAMENTAS</h3>
+            <div class="card-container">
+                <div class="card-skill-o reveal reveal--escala" tabindex="0"><h4>Git</h4><p>Versionamento e branches em todos os projetos.</p></div>
+                <div class="card-skill-o reveal reveal--escala" tabindex="0"><h4>GitHub</h4><p>Repositórios, Pages e GitHub Actions para automação.</p></div>
+                <div class="card-skill-o reveal reveal--escala" tabindex="0"><h4>Railway &amp; Vercel</h4><p>Deploy em produção do Selo Jurídico e do Selo Fiscal.</p></div>
+                <div class="card-skill-o reveal reveal--escala" tabindex="0"><h4>Postman</h4><p>Teste e depuração das APIs REST que eu construo.</p></div>
+                <div class="card-skill-o reveal reveal--escala" tabindex="0"><h4>VS Code</h4><p>Editor principal do meu dia a dia.</p></div>
+                <div class="card-skill-o reveal reveal--escala" tabindex="0"><h4>Scrum</h4><p>Metodologia ágil aplicada no CEPEDI e nos projetos acadêmicos.</p></div>
+            </div>
+        </section>
+
+        <!-- ============ PROJETOS ============ -->
+        <section class="projetos" id="proj" aria-labelledby="proj-titulo">
+            <h2 class="secao-titulo reveal" id="proj-titulo">PROJETOS</h2>
+
+            <!-- 1. SELO JURÍDICO -->
+            <article class="card-proj destaque reveal">
+                <div class="text">
+                    <p class="tag">Produto em produção · Selo Systems</p>
+                    <h3>Selo Jurídico</h3>
+                    <p class="resumo">
+                        Plataforma de gestão para escritórios de advocacia, rodando hoje em um escritório real.
+                        Cada escritório é uma conta isolada, com controle de acesso por papel e alertas de prazo.
+                    </p>
+                    <ul class="bullets">
+                        <li><strong>Multi-tenant:</strong> os dados de um escritório nunca aparecem para outro.</li>
+                        <li><strong>Três papéis de acesso:</strong> proprietário, associado e estagiário, cada um com permissões próprias.</li>
+                        <li><strong>Alertas calculados em tempo real</strong> a partir das datas — pagamentos vencidos, compromissos e prazos fatais.</li>
+                        <li><strong>E-mail automático diário às 7h</strong> com os alertas, via node-cron e Nodemailer.</li>
+                        <li><strong>Sete módulos integrados:</strong> advogados, clientes, contratos, processos, pagamentos, agenda e prazos.</li>
+                    </ul>
+                    <ul class="stack" aria-label="Tecnologias usadas">
+                        <li>React</li><li>styled-components</li><li>Node.js</li><li>Express</li><li>MySQL</li><li>JWT</li><li>Cloudinary</li><li>Railway</li>
+                    </ul>
+                </div>
+                <div class="img-link">
+                    <picture>
+                        <source srcset="img/juridico.webp" type="image/webp">
+                        <img src="img/juridico.jpg" width="1200" height="625" loading="lazy" decoding="async" alt="Painel inicial do Selo Jurídico, com compromissos da semana, prazos processuais e resumo financeiro do escritório">
+                    </picture>
+                    <div class="links">
+                        <a class="btn-demo" href="https://selo-juridico.pages.dev/login" target="_blank" rel="noopener">VER AO VIVO</a>
+                        <span class="btn-privado">Código privado</span>
                     </div>
+                </div>
+            </article>
 
-
-
-                    <h2>BACK-END</h2>
-                    <div class="card-container">
-                        <div class="card-skill-f"><h1>NodeJS</h1><p>|⭐⭐⭐⭐☆| <br> Conhecimento avançado na framework.</p></div>
-                        <div class="card-skill-f"><h1>JavaScript</h1><p>|⭐⭐⭐⭐☆| <br> Conhecimento avançado em manipulação do DOM, eventos e consumo de APIs.</p></div>
-                        <div class="card-skill-b"><h1>Express</h1><p>|⭐⭐⭐⭐☆| <br> Implementação e consumo de APIs e funciolanidades do back-end</p></div>
-                        <div class="card-skill-b"><h1>Java </h1><p>|⭐⭐⭐⭐☆| <br> Programação orientada a objetos, desenvolvimento de aplicações e APIs.</p></div>
-                        <div class="card-skill-b"><h1>Python </h1><p>|⭐⭐⭐⭐⭐| <br> Uso para automação, ciência de dados e engenharia de dados.</p></div>
-                        <div class="card-skill-b"><h1>REST API</h1><p>|⭐⭐⭐⭐☆| <br> Implementação e consumo de APIs de forma eficiente</p></div>
-
+            <!-- 2. SELO FISCAL -->
+            <article class="card-proj destaque reveal">
+                <div class="text">
+                    <p class="tag">Em desenvolvimento · Selo Systems</p>
+                    <h3>Selo Fiscal</h3>
+                    <p class="resumo">
+                        SaaS multi-tenant para emissão de NF-e (modelo 55) e NFC-e (modelo 65) no regime
+                        Simples Nacional, para empresas da Bahia e de Minas Gerais.
+                    </p>
+                    <ul class="bullets">
+                        <li><strong>API em NestJS + TypeScript</strong>, com isolamento por empresa em todas as camadas.</li>
+                        <li><strong>Certificado digital A1:</strong> upload validado com node-forge, senha cifrada em AES-256-GCM e nunca devolvida pela API.</li>
+                        <li><strong>Object Storage S3</strong> para o binário do certificado, com MinIO no ambiente local.</li>
+                        <li><strong>Fila assíncrona</strong> com BullMQ e Redis para o processamento das notas.</li>
+                        <li><strong>Prisma com migrations versionadas</strong> e cobertura de testes com Jest e supertest.</li>
+                        <li>Cadastros de empresa, clientes e produtos, com NCM, CEST, CFOP e resolução de código IBGE via CEP.</li>
+                    </ul>
+                    <ul class="stack" aria-label="Tecnologias usadas">
+                        <li>NestJS</li><li>TypeScript</li><li>Prisma</li><li>MySQL</li><li>BullMQ</li><li>Redis</li><li>AWS S3</li><li>Jest</li><li>React</li><li>Vite</li><li>Tailwind</li>
+                    </ul>
+                </div>
+                <div class="img-link">
+                    <picture>
+                        <source srcset="img/fiscal.webp" type="image/webp">
+                        <img src="img/fiscal.jpg" width="1200" height="557" loading="lazy" decoding="async" alt="Painel do Selo Fiscal em ambiente de homologação, com faturamento do mês, notas emitidas, validade do certificado digital e atividade recente da empresa">
+                    </picture>
+                    <div class="links">
+                        <span class="btn-privado">Código privado — disponível sob solicitação</span>
                     </div>
+                </div>
+            </article>
 
-
-                    <h2>DATA ENGINEERING</h2>
-                    <div class="card-container">
-                        <div class="card-skill-b"><h1>MySQL</h1><p>|⭐⭐⭐⭐☆| <br> Modelagem e manipulação de dados estruturados.</p></div>
-                        <div class="card-skill-d"><h1>Apache Spark</h1><p>|⭐⭐⭐⭐☆| <br> Utilizado para processamento e análise de grandes volumes de dados no estágio.</p></div>
-                        <div class="card-skill-d"><h1>AWS Glue</h1><p>|⭐⭐⭐⭐☆| <br> Experiência com ETL e automação de pipelines de dados.</p></div>
-                        <div class="card-skill-d"><h1>AWS S3</h1><p>|⭐⭐⭐⭐☆| <br> Armazenamento e organização de dados para processamento eficiente.</p></div>
-                        <div class="card-skill-d"><h1>AWS Lambda</h1><p>|⭐⭐⭐⭐☆| <br> Implementação de funções serverless para automação de tarefas.</p></div>
-                        <div class="card-skill-d"><h1>Amazon QuickSight</h1><p>|⭐⭐⭐⭐☆| <br> Desenvolvimento de dashboards interativos e relatórios dinâmicos.</p></div>
-                        <div class="card-skill-d"><h1>Docker</h1><p>|⭐⭐⭐⭐☆| <br> Containerização de aplicações para garantir portabilidade e escalabilidade.</p></div>
+            <!-- 3. TCC -->
+            <article class="card-proj reveal">
+                <div class="text">
+                    <p class="tag">TCC · IFBA · 2026.2</p>
+                    <h3>Reconhecimento de Acordes com IA e Aprendizado Musical Interativo</h3>
+                    <p class="resumo">
+                        Plataforma web que extrai cifras e letras sincronizadas de qualquer música do YouTube
+                        e valida em tempo real o que a pessoa está tocando — por teclado MIDI ou pelo microfone,
+                        no caso de violão, guitarra e piano acústico.
+                    </p>
+                    <ul class="bullets">
+                        <li><strong>Pipeline de áudio em Python:</strong> ingestão via yt-dlp, separação de fontes sonoras e extração harmônica com CQT, cromagramas e rastreamento de batidas (librosa e madmom).</li>
+                        <li><strong>Reconhecimento automático de acordes (ACE)</strong> com simplificação harmônica e diagramas adaptados ao instrumento — teclas no piano, tablatura no violão.</li>
+                        <li><strong>Letras sincronizadas em karaokê,</strong> alinhadas no tempo com Faster-Whisper.</li>
+                        <li><strong>Validação híbrida no navegador:</strong> Web MIDI API para instrumentos digitais e Web Audio API para análise de sinal polifônico via microfone, para quem só tem instrumento acústico.</li>
+                        <li><strong>Gamificação</strong> com precisão de execução, pontuação dinâmica, streaks de prática e níveis de maestria.</li>
+                    </ul>
+                    <ul class="stack" aria-label="Tecnologias usadas">
+                        <li>Python</li><li>PyTorch</li><li>Librosa</li><li>Madmom</li><li>Faster-Whisper</li>
+                        <li>FastAPI</li><li>WebSockets</li><li>PostgreSQL</li><li>React</li><li>TypeScript</li>
+                        <li>Web MIDI API</li><li>Web Audio API</li>
+                    </ul>
+                </div>
+                <div class="img-link">
+                    <div class="mockup" role="img" aria-label="Arquitetura do projeto: pipeline de áudio e IA em Python com Librosa, Madmom e PyTorch; back-end em FastAPI com WebSockets e PostgreSQL; front-end em React e TypeScript com Web MIDI API e Web Audio API">
+                        <span class="mockup__eyebrow">Arquitetura</span>
+                        <ul class="mockup__list">
+                            <li>Áudio e IA · Python, Librosa, Madmom, PyTorch</li>
+                            <li>Transcrição · Faster-Whisper</li>
+                            <li>Back-end · FastAPI, WebSockets, PostgreSQL</li>
+                            <li>Front-end · React, TypeScript</li>
+                            <li>Captura · Web MIDI API, Web Audio API</li>
+                        </ul>
                     </div>
-
-
-                    <h2>OUTRAS FERRAMENTAS</h2>
-                    <div class="card-container">
-
-                        <div class="card-skill-o"><h1>Git</h1><p>|⭐⭐⭐⭐⭐| <br> Controle de versão eficiente para colaboração e versionamento de código.</p></div>
-                        <div class="card-skill-o"><h1>GitHub</h1><p>|⭐⭐⭐⭐⭐| <br> Hospedagem e gerenciamento de repositórios.</p></div>
-                        <div class="card-skill-o"><h1>VSCode</h1><p>|⭐⭐⭐⭐⭐| <br> Editor de código favorito para produtividade e eficiência.</p></div>
-                        <div class="card-skill-o"><h1>Postman</h1><p>|⭐⭐⭐⭐☆| <br> Teste e depuração de APIs RESTful.</p></div>
+                    <div class="links">
+                        <span class="btn-privado">Proposta aprovada — desenvolvimento em 2026.2</span>
                     </div>
+                </div>
+            </article>
 
-
-            </section>
-
-
-            <section class="projetos" id="proj">
-
-
-                    <div class="card-proj">
-                        <div class="text">
-                            <h1>Escritório de Advocacia</h1>
-                            <p>
-
-             Projeto desenvolvido para um escritório de advocacia, focado em transmitir credibilidade e profissionalismo. A landing page possui: <br>                   
-             <br>  Design elegante e minimalista para reforçar a seriedade da marca. <br>
-             <br>Seção de áreas de atuação, destacando especialidades do escritório. <br>
-             <br>Blog integrado, com artigos sobre direitos e novidades jurídicas. <br>
-                                <br>  Tecnologias utilizadas: HTML, CSS, JavaScript
-                            </p>
-                        </div>
-                        <div class="img-link">
-                            <img src="img/adv.jpg" alt="imagem do projeto de escritório de advocacia">
-                            <a href="https://github.com/viquituor/adv-template">LINK NO GITHUB</a>
-                        </div>
+            <!-- 4. PÓS-GRADUAÇÃO IFBA -->
+            <article class="card-proj reveal">
+                <div class="text">
+                    <p class="tag">Site institucional · No ar</p>
+                    <h3>Pós-Graduação em Desenvolvimento Web — IFBA</h3>
+                    <p class="resumo">
+                        Site institucional completo da especialização Lato Sensu do Instituto Federal da Bahia,
+                        com área pública e navegação por seções.
+                    </p>
+                    <ul class="bullets">
+                        <li>SPA em React, com roteamento por React Router e build com Vite.</li>
+                        <li>Interface construída com Tailwind CSS, responsiva do mobile ao desktop.</li>
+                        <li>Seções de alunos, disciplinas, docentes, editais, inscrições e notícias.</li>
+                        <li>Publicado no GitHub Pages com deploy automatizado por gh-pages.</li>
+                    </ul>
+                    <ul class="stack" aria-label="Tecnologias usadas">
+                        <li>React</li><li>Vite</li><li>Tailwind</li><li>React Router</li><li>Axios</li>
+                    </ul>
+                </div>
+                <div class="img-link">
+                    <picture>
+                        <source srcset="img/posweb.webp" type="image/webp">
+                        <img src="img/posweb.jpg" width="1100" height="619" loading="lazy" decoding="async" alt="Página inicial do site da Pós-Graduação em Desenvolvimento Web do IFBA">
+                    </picture>
+                    <div class="links">
+                        <a class="btn-demo" href="https://viquituor.github.io/PosWeb.Deploy/" target="_blank" rel="noopener">VER AO VIVO</a>
+                        <a href="https://github.com/viquituor/PosWeb.Deploy" target="_blank" rel="noopener">GITHUB</a>
                     </div>
+                </div>
+            </article>
 
-                    <div class="card-proj">
-                        <div class="text">
-                            <h1>Agência de Viagens</h1>
-                            <p>
-                Criação de uma landing page vibrante e interativa para uma agência de viagens como um teste de aprendizado, explorando novas tecnologias e aprimorando habilidades em design e desenvolvimento web. Durante esse processo, foram aplicadas diferentes técnicas para aprimorar a experiência do usuário e otimizar a navegação. Destaques: <br>
-                <br> Galeria de imagens dinâmica, implementada com GSAP para transições suaves entre destinos incríveis. <br>
-                <br>Seção de pacotes promocionais, utilizando componentes interativos para melhorar a apresentação das ofertas. <br>
-                <br>Integração com redes sociais, permitindo que clientes compartilhem suas experiências diretamente do site. <br>
-                <br> Botão de chat online, criado para proporcionar atendimento rápido e eficiente. <br>
-                                <br>  Tecnologias utilizadas: HTML, CSS, JavaScript, GSAP para animações, API de localização.
-                            </p>
-                        </div>
-                        <div class="img-link">
-                            <img src="img/vacation.jpg" alt="imagem do projeto de agência de viagens">
-                            <a href="https://github.com/viquituor/travel">LINK NO GITHUB</a>
-                        </div>
+            <!-- 5. FLUXOGRAMA UFBA -->
+            <article class="card-proj reveal">
+                <div class="text">
+                    <p class="tag">Ferramenta · No ar</p>
+                    <h3>Fluxograma de Enfermagem — UFBA</h3>
+                    <p class="resumo">
+                        Aplicação para estudantes acompanharem o próprio progresso no curso de Bacharelado em
+                        Enfermagem, com todas as disciplinas, pré-requisitos e carga horária do currículo 2024-1.
+                    </p>
+                    <ul class="bullets">
+                        <li>Cálculo automático de progresso e previsão de conclusão conforme o ritmo de estudo escolhido.</li>
+                        <li>Estado de cada disciplina — concluída, disponível ou bloqueada — derivado da cadeia de pré-requisitos.</li>
+                        <li>Busca por nome ou código e filtros por situação.</li>
+                        <li>Progresso salvo no navegador, sem back-end nem cadastro.</li>
+                    </ul>
+                    <ul class="stack" aria-label="Tecnologias usadas">
+                        <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>localStorage</li>
+                    </ul>
+                </div>
+                <div class="img-link">
+                    <picture>
+                        <source srcset="img/fluxograma.webp" type="image/webp">
+                        <img src="img/fluxograma.jpg" width="1100" height="619" loading="lazy" decoding="async" alt="Fluxograma interativo do curso de Enfermagem da UFBA, com as disciplinas organizadas por semestre">
+                    </picture>
+                    <div class="links">
+                        <a class="btn-demo" href="https://viquituor.github.io/Fluxograma-Enfermagem-UFBA/" target="_blank" rel="noopener">VER AO VIVO</a>
+                        <a href="https://github.com/viquituor/Fluxograma-Enfermagem-UFBA" target="_blank" rel="noopener">GITHUB</a>
                     </div>
+                </div>
+            </article>
 
-                    <div class="card-proj">
-                        <div class="text">
-                            <h1>Portfólio Pessoal</h1>
-                            <p>
-                Desenvolvimento de um portfólio digital para apresentar minhas habilidades, projetos e trajetória profissional. Esse projeto foi criado como uma forma de aprendizado contínuo, aplicando as melhores práticas de desenvolvimento web e design moderno. A estrutura do portfólio inclui: <br>
-                <br>Seção "Sobre Mim", destacando minha jornada na tecnologia e minha especialização em desenvolvimento front-end e engenharia de dados. <br>
-                <br> Lista de Projetos, apresentando trabalhos realizados com descrição detalhada, tecnologias utilizadas e links para repositórios. <br>
-                <br>Habilidades Técnicas, organizadas por categoria, exibindo meu nível de conhecimento em diferentes tecnologias. <br>
-                <br>Seção de Contato, com formulário interativo e links para redes sociais e e-mail profissional. <br>
-
-                                O design foi pensado para ser intuitivo e responsivo, garantindo uma experiência fluida tanto em desktop quanto em dispositivos móveis. <br> 
-                                Foram utilizados elementos animados com GSAP para proporcionar interatividade, além de um sistema de carregamento otimizado para melhor desempenho. <br>
-                                <br>  Tecnologias utilizadas: React, HTML, CSS, JavaScript.
-</p>
-                        </div>
-                        <div class="img-link">
-                            <img src="img/Captura de Tela (8).png" alt="imagem do projeto de portifólio pessoal">
-                            <a href="https://github.com/viquituor/viquituor.github.io">LINK NO GITHUB</a>
-                        </div>
+            <!-- 6. COMPASS UOL -->
+            <article class="card-proj reveal">
+                <div class="text">
+                    <p class="tag">Engenharia de dados</p>
+                    <h3>Pipeline de Dados AWS — Compass UOL</h3>
+                    <p class="resumo">
+                        Projeto final do estágio: um pipeline completo de ingestão, processamento e análise de
+                        dados na AWS, com dashboard para visualização dos insights.
+                    </p>
+                    <ul class="bullets">
+                        <li>Ingestão e transformação com S3, Glue, Lambda e Apache Spark.</li>
+                        <li>Automação do processamento em Python, distribuída ao longo de dez sprints.</li>
+                        <li>Dashboard interativo no Amazon QuickSight com métricas e gráficos.</li>
+                        <li>Ambientes containerizados com Docker.</li>
+                    </ul>
+                    <ul class="stack" aria-label="Tecnologias usadas">
+                        <li>Python</li><li>Apache Spark</li><li>AWS S3</li><li>AWS Glue</li><li>AWS Lambda</li><li>QuickSight</li><li>Docker</li>
+                    </ul>
+                </div>
+                <div class="img-link">
+                    <picture>
+                        <source srcset="img/dashboard.webp" type="image/webp">
+                        <img src="img/dashboard.jpg" width="1600" height="1223" loading="lazy" decoding="async" alt="Dashboard do projeto final construído no Amazon QuickSight">
+                    </picture>
+                    <div class="links">
+                        <a href="https://github.com/viquituor/compasso" target="_blank" rel="noopener">GITHUB</a>
                     </div>
+                </div>
+            </article>
 
-                    <div class="card-proj">
-                        <div class="text">
-                            <h1>Projeto Final do Estágio na Compass UOL</h1>
-                            <p>
-                                No projeto final do estágio na Compass UOL, desenvolvi um pipeline completo de engenharia de dados e um dashboard interativo para visualização dos insights gerados.
-                                 O objetivo foi criar uma solução eficiente para ingestão, processamento e análise de dados em AWS. <br>
-                               <br> Pipeline de Dados: Implementado utilizando AWS S3, Glue, Lambda e Apache Spark para coletar, transformar e armazenar dados de maneira otimizada.<br>
-                               <br>Automação e Monitoramento: Criação de scripts em Python para automação das tarefas de processamento, garantindo maior eficiência e confiabilidade.<br>
-                               <br> Dashboard Interativo: Desenvolvido no Amazon QuickSight, permitindo a visualização dinâmica dos dados, com gráficos e métricas detalhadas para facilitar a tomada de decisões.<br>
-                               <br>Segurança e Eficiência: Aplicação de boas práticas para garantir integridade e escalabilidade na manipulação dos dados.<br>
-                               <br>Esse projeto consolidou minha experiência prática em big data, computação em nuvem e engenharia de dados, além de fortalecer minhas habilidades em automação e visualização de dados.<br>
-                                Tecnologias utilizadas: Python, Apache Spark, AWS S3, AWS Glue, AWS Lambda, Amazon QuickSight, Docker.</p>
-                        </div>
-                        <div class="img-link">
-                            <img src="img/dashboard_page-0001.jpg" alt="imagem do dashboard do projeto final">
-                            <a href="https://github.com/viquituor/compasso" id="sistemajuridico">LINK NO GITHUB</a>
-                        </div>
+            <!-- 7. ALTO EM -->
+            <article class="card-proj reveal">
+                <div class="text">
+                    <p class="tag">Ferramenta · No ar</p>
+                    <h3>Gerador ALTO EM</h3>
+                    <p class="resumo">
+                        Aplicação que gera e exporta imagens baseadas no selo de alerta nutricional da Anvisa,
+                        montadas em tempo real pelo usuário.
+                    </p>
+                    <ul class="bullets">
+                        <li>Criação e remoção dinâmica de rótulos manipulando o DOM diretamente.</li>
+                        <li>Alternância de layout entre colunas e linhas, com limite lógico de quatro avisos.</li>
+                        <li>Exportação em PNG com fundo transparente, renderizando o HTML em canvas com html2canvas.</li>
+                    </ul>
+                    <ul class="stack" aria-label="Tecnologias usadas">
+                        <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>html2canvas</li>
+                    </ul>
+                </div>
+                <div class="img-link">
+                    <picture>
+                        <source srcset="img/altoem.webp" type="image/webp">
+                        <img src="img/altoem.jpg" width="580" height="630" loading="lazy" decoding="async" alt="Interface do gerador de selos ALTO EM, com o rótulo e os controles de montagem">
+                    </picture>
+                    <div class="links">
+                        <a class="btn-demo" href="https://viquituor.github.io/ALTOEM/" target="_blank" rel="noopener">VER AO VIVO</a>
+                        <a href="https://github.com/viquituor/ALTOEM" target="_blank" rel="noopener">GITHUB</a>
                     </div>
+                </div>
+            </article>
 
-              
-
-                    <div class="card-proj" >
-                        <div class="text">
-                            <h1>Sistema de Gestão Jurídica </h1>
-                            <p>Desenvolvi um sistema jurídico completo com foco na gestão de rotinas de um escritório de advocacia. <br>
-                        <br> Trata-se de um produto real, iniciado como um trabalho acadêmico da disciplina de Banco de Dados, e posteriormente expandido e documentado nas disciplinas de Análise e Modelagem de Sistemas, Modelagem de Processos e Desenvolvimento de Sistemas. <br>
-                        <br> O sistema foi construído do zero, com base em requisitos fornecidos diretamente por um Product Owner, sem o apoio de uma equipe de desenvolvimento. A stack utilizada inclui Node.js e Express no backend, React no frontend e MySQL, com modelagem feita no BRModelo e MySQL Workbench. <br>
-
-                        <br> Módulos desenvolvidos: <br> <strong> |Advogados | Clientes | Contratos | Processos| Pagamentos | Agenda | Prazos Processuais| </strong> <br>
-
-                        <br>  A aplicação possui navegação organizada por módulos, formulários para cadastro e edição, e listagens de dados dinâmicas. <br>
-                        <br>  O backend fornece uma API completa e o frontend garante uma experiência clara e funcional. <br>
-                        <br>  O projeto demonstra minha capacidade de integrar conhecimento técnico com análise de requisitos reais, resultando em uma solução prática e aplicável ao mundo jurídico.</p>
-                        </div>
-                        <div class="img-link">
-                            <video controls autoplay loop muted>
-                            <source src="/img/Sistema.mp4" type="video/mp4" alt="video do projeto de sistema de gestão jurídica">
-                            Seu navegador não suporta vídeos HTML5. 
-                            </video>
-                            <a href="https://github.com/viquituor/SISTEMA_JURIDICO">LINK NO GITHUB</a>
-                        </div>
+            <!-- 8. ADVOCACIA -->
+            <article class="card-proj reveal">
+                <div class="text">
+                    <p class="tag">Landing page</p>
+                    <h3>Escritório de Advocacia</h3>
+                    <p class="resumo">
+                        Landing page para um escritório de advocacia, com design minimalista pensado para
+                        transmitir credibilidade e seriedade.
+                    </p>
+                    <ul class="bullets">
+                        <li>Seção de áreas de atuação destacando as especialidades do escritório.</li>
+                        <li>Blog integrado para artigos sobre direitos e novidades jurídicas.</li>
+                        <li>Layout responsivo construído sem frameworks.</li>
+                    </ul>
+                    <ul class="stack" aria-label="Tecnologias usadas">
+                        <li>HTML5</li><li>CSS3</li><li>JavaScript</li>
+                    </ul>
+                </div>
+                <div class="img-link">
+                    <picture>
+                        <source srcset="img/adv.webp" type="image/webp">
+                        <img src="img/adv.jpg" width="1100" height="619" loading="lazy" decoding="async" alt="Landing page do escritório de advocacia">
+                    </picture>
+                    <div class="links">
+                        <a href="https://github.com/viquituor/adv-template" target="_blank" rel="noopener">GITHUB</a>
                     </div>
+                </div>
+            </article>
 
- 
-
-        <div class=" display">
-
-                    <div class="card-proj">
-                        <div class="text">
-                            <h1></h1>
-                            <p></p>
-                        </div>
-                        <div class="img-link">
-                            <img src="" alt="">
-                            <a href="">LINK NO GITHUB</a>
-                        </div>
+            <!-- 9. TRAVEL -->
+            <article class="card-proj reveal">
+                <div class="text">
+                    <p class="tag">Landing page</p>
+                    <h3>Agência de Viagens</h3>
+                    <p class="resumo">
+                        Landing page vibrante para uma agência de viagens, feita como estudo de animação e
+                        interação no navegador.
+                    </p>
+                    <ul class="bullets">
+                        <li>Galeria de destinos com transições suaves controladas por GSAP.</li>
+                        <li>Seção de pacotes promocionais com componentes interativos.</li>
+                        <li>Botão de chat e integração com redes sociais.</li>
+                    </ul>
+                    <ul class="stack" aria-label="Tecnologias usadas">
+                        <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>GSAP</li>
+                    </ul>
+                </div>
+                <div class="img-link">
+                    <picture>
+                        <source srcset="img/vacation.webp" type="image/webp">
+                        <img src="img/vacation.jpg" width="1100" height="619" loading="lazy" decoding="async" alt="Landing page da agência de viagens">
+                    </picture>
+                    <div class="links">
+                        <a href="https://github.com/viquituor/travel" target="_blank" rel="noopener">GITHUB</a>
                     </div>
+                </div>
+            </article>
 
+            <!-- 10. PORTFOLIO -->
+            <article class="card-proj reveal">
+                <div class="text">
+                    <p class="tag">Este site</p>
+                    <h3>Portfólio Pessoal</h3>
+                    <p class="resumo">
+                        O site que você está lendo. Construído sem framework, com foco em performance,
+                        acessibilidade e animação controlada.
+                    </p>
+                    <ul class="bullets">
+                        <li>HTML, CSS e JavaScript puros — sem build e sem dependência de framework.</li>
+                        <li>Animação com GSAP e ScrollTrigger, toda desativada em <code>prefers-reduced-motion</code>.</li>
+                        <li>Imagens em WebP com fallback, carregamento tardio e dimensões declaradas.</li>
+                        <li>Conteúdo legível mesmo com o JavaScript desligado.</li>
+                    </ul>
+                    <ul class="stack" aria-label="Tecnologias usadas">
+                        <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>GSAP</li>
+                    </ul>
+                </div>
+                <div class="img-link">
+                    <picture>
+                        <source srcset="img/portfolio.webp" type="image/webp">
+                        <img src="img/portfolio.jpg" width="1400" height="788" loading="lazy" decoding="async" alt="Captura de tela deste portfólio">
+                    </picture>
+                    <div class="links">
+                        <a class="btn-demo" href="https://viquituor.github.io/" target="_blank" rel="noopener">VER AO VIVO</a>
+                        <a href="https://github.com/viquituor/viquituor.github.io" target="_blank" rel="noopener">GITHUB</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- ============ FORMAÇÃO ============ -->
+        <section class="formacao" id="formacao" aria-labelledby="formacao-titulo">
+            <h2 class="secao-titulo reveal" id="formacao-titulo">FORMAÇÃO</h2>
+            <div class="formacao-grid">
+                <article class="card-form reveal">
+                    <p class="periodo">2022 — 2027 (previsto)</p>
+                    <h3>Bacharelado em Sistemas de Informação</h3>
+                    <p class="instituicao">Instituto Federal da Bahia (IFBA) — Campus Vitória da Conquista</p>
+                    <p>
+                        Banco de dados, análise e modelagem de sistemas, modelagem de processos, sistemas
+                        distribuídos, redes, paradigmas de linguagens de programação e inteligência artificial.
+                    </p>
+                </article>
+
+                <article class="card-form reveal">
+                    <p class="periodo">09/2025 — 02/2026</p>
+                    <h3>Programa Futuro Digital — Front-End</h3>
+                    <p class="instituicao">CEPEDI</p>
+                    <p>
+                        Bolsa de formação em desenvolvimento front-end: React, Tailwind, consumo de APIs,
+                        acessibilidade e trabalho em equipe sob Scrum.
+                    </p>
+                </article>
+
+                <article class="card-form reveal">
+                    <p class="periodo">04/2024 — 09/2024</p>
+                    <h3>AWS Data Cloud Engineering Scholarship</h3>
+                    <p class="instituicao">Compass UOL</p>
+                    <p>
+                        Programa de bolsas em engenharia de dados na AWS, concluído com um projeto final de
+                        pipeline e dashboard desenvolvido ao longo de dez sprints.
+                    </p>
+                </article>
+
+                <article class="card-form reveal">
+                    <p class="periodo">Idiomas</p>
+                    <h3>Inglês — Avançado (C1)</h3>
+                    <p class="instituicao">Leitura, escrita e conversação</p>
+                    <p>
+                        Leio documentação técnica no original, escrevo código e commits em inglês e
+                        participo de conversas técnicas sem apoio de tradução.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ CONTATO ============ -->
+    <footer id="cont" class="contatos">
+        <div class="bye">
+            <div class="last-logo" aria-hidden="true">
+                <div class="logo"><p>V</p></div><div class="logo"><p>V</p></div><div class="logo"><p>V</p></div><div class="logo"><p>V</p></div><div class="logo"><p>V</p></div><div class="logo"><p>V</p></div>
+            </div>
+
+            <h2 class="contato-titulo">VAMOS CONVERSAR</h2>
+            <p class="text">
+                Estou aberto a novas oportunidades e desafios. Se você gostou do meu trabalho,
+                me chame por e-mail ou pelas redes.
+            </p>
+
+            <div class="bt">
+                <a class="mail" href="mailto:vitoralmeide@gmail.com">vitoralmeide@gmail.com</a>
+            </div>
+
+            <div class="ctimg">
+                <a href="https://www.linkedin.com/in/viquituor/" target="_blank" rel="noopener" aria-label="LinkedIn de Paulo Victor"><img src="img/icons8-linkedin-50.png" width="50" height="50" loading="lazy" alt=""></a>
+                <a href="https://github.com/viquituor" target="_blank" rel="noopener" aria-label="GitHub de Paulo Victor"><img src="img/icons8-github-50.png" width="50" height="50" loading="lazy" alt=""></a>
+                <a href="mailto:vitoralmeide@gmail.com" aria-label="Enviar e-mail para Paulo Victor"><img src="img/icons8-gmail-50.png" width="50" height="50" loading="lazy" alt=""></a>
+                <a href="https://www.instagram.com/viquituor" target="_blank" rel="noopener" aria-label="Instagram de Paulo Victor"><img src="img/icons8-instagram-50.png" width="50" height="50" loading="lazy" alt=""></a>
+            </div>
         </div>
 
-            </section>
-
-        </main>
-
-
-
-        <footer id="cont" class="contatos">
-
-            <div class="bye">
-               <div class="last-logo"> <div class="logo"><p>V</p></div><div class="logo"><p>V</p></div><div class="logo"><p>V</p></div><div class="logo"><p>V</p></div><div class="logo"><p>V</p></div><div class="logo"><p>V</p></div></div>
-               <div class="ctimg">
-                  <a href="https://www.instagram.com/viquituor"> <img src="img/icons8-instagram-50.png" alt="icone do instagram"></a>
-                  <a href="mailto:vitoralmeide@gmail.com"> <img src="img/icons8-gmail-50.png" alt="icone do gmail"></a>
-                  <a href="https://www.linkedin.com/in/viquituor/"> <img src="img/icons8-linkedin-50.png" alt="icone do linkedin"></a>
-                  <a href="https://github.com/viquituor"> <img src="img/icons8-github-50.png" alt="icone do github"></a>
-              </div>
-               <p class="text">Estou sempre aberto a novas oportunidades e desafios! Se você gostou do meu trabalho e quer saber mais sobre mim, entre em contato por e-mail ou pelas redes sociais.</p>
-            </div>
-
-
-
-            <div class="last">
-                <p><img src="img/location_on-24px 1.png" alt="icone de localização">BRASIL, BAHIA, VITORIA DA CONQUISTA</p>
-                <p>© 2025, All Rights By VIQUITUOR Design.</p>
-            </div>
-            
-        </footer>
+        <div class="last">
+            <p><img src="img/location_on-24px 1.png" width="33" height="35" loading="lazy" alt="">Vitória da Conquista, Bahia — Brasil</p>
+            <p>© <span id="ano">2026</span>, All Rights By VIQUITUOR Design.</p>
+        </div>
+    </footer>
     </div>
 
+    <!-- ============ LIGHTBOX ============ -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagem ampliada" hidden>
+        <button class="lightbox__close" id="lightbox-close" type="button" aria-label="Fechar imagem ampliada">&times;</button>
+        <!-- sem src: um src="" resolve para a própria página e dispara
+             uma requisição inútil que o navegador ainda marca como imagem quebrada -->
+        <img class="lightbox__img" id="lightbox-img" alt="">
+    </div>
 
-
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
     <script src="js/script.js" defer></script>
-    <script>
-      window.onload = function() {
-        setTimeout(() => {
-            document.getElementById("preloader").style.transition = "opacity 0.5s ease";
-            document.getElementById("preloader").style.opacity = "0"; // Fade out
-            setTimeout(() => {
-                document.getElementById("preloader").style.display = "none"; // Hide completely after the fade
-                document.getElementById("conteudo").style.display = "block"; // Show content
-                document.getElementById("bgvideo").style.display = "block"; // Ensure the video is visible
-            }, 500); // Ajuste o tempo para suavizar
-        }, 2000); // Aguardar 2 segundos
-    };
-    </script>
 </body>
 </html>

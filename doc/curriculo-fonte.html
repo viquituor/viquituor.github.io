@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Paulo Victor Almeida de Oliveira — Currículo</title>
+<style>
+  @page { size: A4; margin: 11mm 13mm; }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --tinta: #111111;
+    --suave: #4a4a4a;
+    --linha: #cfcfcf;
+  }
+
+  body {
+    font-family: "Calibri", "Carlito", "Segoe UI", Arial, sans-serif;
+    font-size: 9.6pt;
+    line-height: 1.3;
+    color: var(--tinta);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a { color: var(--tinta); text-decoration: none; border-bottom: 0.5pt solid var(--linha); }
+
+  /* ---------- CABEÇALHO ---------- */
+  .nome { font-size: 19pt; font-weight: 700; letter-spacing: -0.2pt; line-height: 1.1; }
+  .cargo { font-size: 10.4pt; font-weight: 600; color: var(--suave); margin-top: 1.2mm; }
+
+  .contato { font-size: 8.8pt; color: var(--suave); margin-top: 2mm; line-height: 1.5; }
+  .contato span { white-space: nowrap; }
+  .contato .sep { margin: 0 1.4mm; color: var(--linha); }
+
+  /* ---------- SEÇÕES ---------- */
+  h2 {
+    font-size: 9pt;
+    font-weight: 700;
+    letter-spacing: 0.9pt;
+    text-transform: uppercase;
+    padding-bottom: 0.8mm;
+    margin: 2.8mm 0 1.4mm;
+    border-bottom: 1pt solid var(--tinta);
+  }
+
+  h2:first-of-type { margin-top: 4mm; }
+
+  p.resumo { text-align: justify; }
+
+  /* ---------- ITENS ---------- */
+  .item { margin-bottom: 1.9mm; }
+  .item:last-child { margin-bottom: 0; }
+
+  .item-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4mm;
+  }
+
+  .item-titulo { font-size: 9.9pt; font-weight: 700; }
+  .item-org    { font-weight: 600; color: var(--suave); }
+  .item-data   { font-size: 8.6pt; color: var(--suave); white-space: nowrap; }
+
+  .item ul { margin: 0.9mm 0 0 4mm; }
+  .item li { margin-bottom: 0.6mm; }
+  .item li::marker { color: var(--suave); }
+
+  .tec { font-size: 8.8pt; color: var(--suave); margin-top: 0.9mm; }
+  .tec strong { color: var(--tinta); font-weight: 600; }
+
+  /* ---------- HABILIDADES ---------- */
+  .skills-linha { display: flex; gap: 3mm; margin-bottom: 1.2mm; align-items: baseline; }
+  .skills-rotulo { flex: 0 0 23mm; font-weight: 700; font-size: 9pt; }
+  .skills-valor { flex: 1; }
+
+  /* Nada de bloco cortado ao meio entre páginas */
+  .item, .skills-linha { break-inside: avoid; page-break-inside: avoid; }
+  h2 { break-after: avoid; page-break-after: avoid; }
+  body > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="nome">Paulo Victor Almeida de Oliveira</div>
+    <div class="cargo">Desenvolvedor Full Stack</div>
+    <div class="contato">
+      <span>Vitória da Conquista, BA</span><span class="sep">|</span><span>(77) 98888-1715</span><span class="sep">|</span><span>vitoralmeide@gmail.com</span><br>
+      <span><a href="https://viquituor.github.io/">viquituor.github.io</a></span><span class="sep">|</span><span><a href="https://github.com/viquituor">github.com/viquituor</a></span><span class="sep">|</span><span><a href="https://www.linkedin.com/in/viquituor/">linkedin.com/in/viquituor</a></span>
+    </div>
+  </header>
+
+  <h2>Resumo</h2>
+  <p class="resumo">
+    Desenvolvedor full stack com experiência de ponta a ponta: modelagem de banco, API, interface e deploy.
+    Construo os produtos <strong>Selo Systems</strong> — o Selo Jurídico, em produção num escritório de advocacia, e o
+    Selo Fiscal, SaaS multi-tenant de NF-e. Também atuei com engenharia de dados na AWS e front-end sob Scrum.
+  </p>
+
+  <h2>Habilidades Técnicas</h2>
+  <div class="skills-linha">
+    <div class="skills-rotulo">Front-end</div>
+    <div class="skills-valor">React, React Native, TypeScript, JavaScript, Vite, Tailwind, styled-components, HTML5, CSS3, Figma</div>
+  </div>
+  <div class="skills-linha">
+    <div class="skills-rotulo">Back-end</div>
+    <div class="skills-valor">Node.js, Express, NestJS, Python, Flask, Java, APIs REST, JWT e RBAC, BullMQ e Redis, Jest</div>
+  </div>
+  <div class="skills-linha">
+    <div class="skills-rotulo">Dados e cloud</div>
+    <div class="skills-valor">MySQL, Prisma, SQL, Apache Spark, AWS (S3, Glue, Lambda, Athena, QuickSight), Docker</div>
+  </div>
+  <div class="skills-linha">
+    <div class="skills-rotulo">Ferramentas</div>
+    <div class="skills-valor">Git, GitHub Actions, Railway, Vercel, Postman, Scrum</div>
+  </div>
+  <div class="skills-linha">
+    <div class="skills-rotulo">Idiomas</div>
+    <div class="skills-valor">Português (nativo), Inglês (avançado — C1)</div>
+  </div>
+
+  <h2>Experiência Profissional</h2>
+
+  <div class="item">
+    <div class="item-topo">
+      <div><span class="item-titulo">Desenvolvedor Front-End Júnior</span> <span class="item-org">— CEPEDI</span></div>
+      <div class="item-data">Mai 2026 — Jul 2026</div>
+    </div>
+    <ul>
+      <li>Desenvolvi o front-end do sistema de gerenciamento de equipamentos do GIPAR, no Instituto Federal da Bahia, incluindo as telas de cadastro e controle do inventário.</li>
+      <li>Trabalhei em equipe de desenvolvedores, integrando a interface à API do sistema e participando do fluxo de revisão de código.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="item-topo">
+      <div><span class="item-titulo">Desenvolvedor Full Stack</span> <span class="item-org">— Advocacia Almeida</span></div>
+      <div class="item-data">Out 2024 — Mai 2025</div>
+    </div>
+    <ul>
+      <li>Responsável técnico pelo desenvolvimento de ponta a ponta do sistema de gestão do escritório, hoje o produto Selo Jurídico: API REST em Node.js e Express sobre MySQL, com JWT e acesso por papel, e interface em React.</li>
+      <li>Entreguei sete módulos integrados — advogados, clientes, contratos, processos, pagamentos, agenda e prazos — substituindo o controle em planilhas do escritório.</li>
+    </ul>
+    <div class="tec"><strong>Tecnologias:</strong> React, styled-components, Node.js, Express, MySQL, JWT</div>
+  </div>
+
+  <div class="item">
+    <div class="item-topo">
+      <div><span class="item-titulo">Desenvolvedor Front-End (Bolsista)</span> <span class="item-org">— CEPEDI, Programa Futuro Digital</span></div>
+      <div class="item-data">Set 2025 — Fev 2026</div>
+    </div>
+    <ul>
+      <li>Desenvolvi interfaces em React com componentes modulares e reutilizáveis, estado com Hooks e consumo de APIs REST.</li>
+      <li>Traduzi protótipos do Figma em telas fiéis ao design, com responsividade e acessibilidade (WCAG), em equipe sob Scrum.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="item-topo">
+      <div><span class="item-titulo">Estagiário de Engenharia de Dados</span> <span class="item-org">— Compass UOL</span></div>
+      <div class="item-data">Abr 2024 — Set 2024</div>
+    </div>
+    <ul>
+      <li>Estruturei pipelines de ETL com Python, SQL e AWS (S3, Glue, Lambda, Athena) para data lakes escaláveis, processando grandes volumes com Apache Spark.</li>
+      <li>Desenvolvi um dashboard interativo no Amazon QuickSight, com métricas e gráficos para apoiar a tomada de decisão de negócio.</li>
+    </ul>
+    <div class="tec"><strong>Tecnologias:</strong> Python, Apache Spark, AWS S3, Glue, Lambda, Athena, QuickSight, Docker</div>
+  </div>
+
+  <h2>Projetos</h2>
+
+  <div class="item">
+    <div class="item-topo">
+      <div><span class="item-titulo">Selo Fiscal</span> <span class="item-org">— SaaS multi-tenant de emissão de NF-e e NFC-e</span></div>
+      <div class="item-data">Em desenvolvimento</div>
+    </div>
+    <ul>
+      <li>API em NestJS e TypeScript com isolamento por empresa em todas as camadas, para emissão de NF-e (modelo 55) e NFC-e (modelo 65) no regime Simples Nacional.</li>
+      <li>Certificado digital A1 validado com node-forge, senha cifrada em AES-256-GCM, binário em Object Storage S3, fila assíncrona com BullMQ e Redis e testes com Jest.</li>
+    </ul>
+    <div class="tec"><strong>Tecnologias:</strong> NestJS, TypeScript, Prisma, MySQL, BullMQ, Redis, AWS S3, Jest, React, Vite, Tailwind</div>
+  </div>
+
+  <div class="item">
+    <div class="item-topo">
+      <div><span class="item-titulo">Selo Jurídico</span> <span class="item-org">— gestão para escritórios de advocacia</span></div>
+      <div class="item-data">Em produção</div>
+    </div>
+    <ul>
+      <li>Plataforma multi-tenant em que cada escritório é uma conta isolada, com três papéis de acesso: proprietário, associado e estagiário.</li>
+      <li>Alertas de prazo calculados em tempo real e enviados por e-mail diário via node-cron e Nodemailer.</li>
+    </ul>
+    <div class="tec"><strong>Demonstração:</strong> <a href="https://selo-juridico.pages.dev">selo-juridico.pages.dev</a> &nbsp;·&nbsp; <strong>Mais projetos:</strong> <a href="https://viquituor.github.io/">viquituor.github.io</a></div>
+  </div>
+
+  <h2>Formação Acadêmica</h2>
+  <div class="item">
+    <div class="item-topo">
+      <div><span class="item-titulo">Bacharelado em Sistemas de Informação</span> <span class="item-org">— Instituto Federal da Bahia (IFBA)</span></div>
+      <div class="item-data">2022 — Jun 2027 (previsto)</div>
+    </div>
+    <div class="tec">
+      <strong>TCC (2026.2):</strong> IA para reconhecimento automático de acordes e aprendizado musical interativo —
+      Python, Librosa, Madmom, PyTorch, Faster-Whisper, FastAPI, WebSockets, Web MIDI API e Web Audio API.
+    </div>
+  </div>
+
+</body>
+</html>

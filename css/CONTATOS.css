@@ -1,134 +1,171 @@
-.contatos{
+/* ============================================================
+   CONTATO
+   ============================================================ */
+.contatos {
+    position: relative;
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: auto;
-    width: 99vw;
-    background-color: #ffdd55;
-    padding-top: 0rem;
-
-
-    .bye{
-        width: 95vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        font-family: 'montserrat';
-        font-weight: 800;
-        font-size: 1.1rem;
-        color: #000000;
-        padding: 2rem;
-        text-align: center;
-        z-index: 2;
-
-
-        .text{
-            width: 50vw;
-        }
-        
-    }
-
-    .last{
-        width: 95vw;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: end;
-        align-content: end;
-
-        img{
-            width: 1rem;
-            height: auto;
-        }
-        
-    }
-
-    .last-logo{
-        height: 5rem;
-        z-index: 1;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: start;
-        justify-content:start;
-        gap: 10rem;
-        padding-top: 2rem;
-    }
-    .logo{
-
-        width: 45px;
-        background-color: #00c6ae;
-        border-radius: 100px;
-        box-shadow: 8px 5px 0px 2px rgba(255,255,255,1);
-
-        p:hover{
-            background-color: #00c6ae;
-
-        }
-  
-        p{  
-            font-size: 2rem;
-            font-family: 'megrim';
-            font-weight: 700;
-            text-align: center;
-            align-content: center;
-            border-radius: 100px;
-            border: solid 2px #050640;
-            color: #000000;
-          
-        }
-    }
+    background-color: var(--amarelo);
+    overflow: hidden;
 }
-    .ctimg{
+
+.contatos .bye {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 3rem 2rem 2rem;
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--preto);
+    text-align: center;
+    z-index: 2;
+}
+
+.contatos .contato-titulo {
+    font-size: clamp(1.8rem, 6vw, 3.2rem);
+    font-weight: 900;
+    letter-spacing: 0.04em;
+}
+
+.contatos .bye .text {
+    max-width: 42rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.contatos .bt {
+    justify-content: center;
+    padding-top: 0.5rem;
+}
+
+/* --- Faixa de logos que flutua no fundo --- */
+.contatos .last-logo {
+    height: 5rem;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: start;
+    justify-content: center;
+    gap: 6rem;
+    padding-top: 1rem;
+    will-change: transform;
+}
+
+.contatos .logo {
+    width: 45px;
+    flex-shrink: 0;
+    background-color: var(--ciano);
+    border-radius: 100px;
+    box-shadow: 8px 5px 0px 2px var(--branco);
+}
+
+.contatos .logo p {
+    font-size: 2rem;
+    font-family: "Megrim", serif;
+    font-weight: 700;
+    text-align: center;
+    align-content: center;
+    border-radius: 100px;
+    border: solid 2px #050640;
+    color: var(--preto);
+}
+
+/* --- Redes sociais --- */
+.ctimg {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding: 0rem;
+    padding-top: 0.5rem;
     z-index: 2;
-
-    img{
-        width:4rem;
-        height: auto;
-    }
-    img:hover{
-        transform: scale(1.4);
-}
 }
 
+.ctimg a {
+    display: block;
+    border-radius: 8px;
+    transition: transform var(--transicao);
+}
+
+.ctimg a:hover,
+.ctimg a:focus-visible {
+    transform: scale(1.35) rotate(-6deg);
+}
+
+.ctimg img {
+    width: 3.5rem;
+    height: auto;
+}
+
+/* --- Rodapé --- */
+.contatos .last {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 3rem 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-top: solid 3px var(--preto);
+    margin-top: 1.5rem;
+}
+
+/* Só o parágrafo da localização é flex — no outro, o gap acabava
+   separando o ano da vírgula ("2026 , All Rights"). */
+.contatos .last p:first-child {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.contatos .last img {
+    width: 1rem;
+    height: auto;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
 @media (max-width: 768px) {
-
-
-    .contatos{
-        
-        width: 100svw;
-        .last-logo{
-            display: none;
-        }
-
-        .bye{
-            width: 90vw;
-            .text{
-                width: 80vw;
-                font-weight: 300;
-            }
-        }
-    
-
-        .last{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-            gap: 1rem;
-        }
+    .contatos .last-logo {
+        display: none;
     }
 
+    .contatos .bye {
+        gap: 1.2rem;
+        padding: 2.5rem 1.5rem 1.5rem;
+    }
 
+    .contatos .bye .text {
+        font-weight: 400;
+        font-size: 0.95rem;
+    }
 
+    .ctimg {
+        gap: 1.2rem;
+    }
+
+    .ctimg img {
+        width: 2.6rem;
+    }
+
+    .contatos .last {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 0.8rem;
+        padding: 1.5rem 1.5rem 2rem;
+        font-size: 0.78rem;
+    }
 }

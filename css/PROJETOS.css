@@ -1,131 +1,309 @@
-.projetos{
+/* ============================================================
+   PROJETOS
+   ============================================================ */
+.projetos {
+    width: 100%;
     height: auto;
-    width: 99vw;
+    background-color: var(--amarelo);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 0 2rem 5rem;
+}
+
+.projetos .card-proj {
+    width: min(80vw, 82rem);
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem;
+    background-color: var(--azul);
+    color: var(--branco);
+    border-radius: 30px;
+    box-shadow: var(--sombra-dura), var(--sombra-suave);
+}
+
+/* Os dois produtos Selo Systems ganham a moldura em destaque */
+.projetos .card-proj.destaque {
+    border: solid 4px var(--preto);
+    box-shadow: 14px 14px 0px -1px var(--preto), var(--sombra-suave);
+}
+
+/* --- Coluna de texto --- */
+.projetos .card-proj .text {
+    flex: 1 1 26rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.9rem;
+}
+
+.projetos .card-proj .tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.8rem;
+    color: var(--preto);
+    background-color: var(--amarelo);
+    border-radius: 100px;
+}
+
+.projetos .card-proj h3 {
+    font-size: clamp(1.3rem, 3vw, 1.9rem);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.projetos .card-proj .resumo {
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.projetos .card-proj .bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 1.1rem;
+}
+
+.projetos .card-proj .bullets li {
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.projetos .card-proj .bullets li::marker {
+    color: var(--amarelo);
+}
+
+/* Amarelo sobre azul dá 3.85:1 e reprova no WCAG para este tamanho.
+   O destaque fica por conta do peso da fonte. O marcador do bullet
+   continua amarelo: é decorativo, não carrega informação. */
+.projetos .card-proj .bullets strong {
+    font-weight: 800;
+    color: var(--branco);
+}
+
+.projetos .card-proj code {
+    font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+    font-size: 0.85em;
+    padding: 0.1rem 0.35rem;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
+}
+
+/* --- Coluna de imagem e links --- */
+.projetos .card-proj .img-link {
+    flex: 1 1 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    min-width: 0;
+}
+
+.projetos .card-proj .img-link img,
+.projetos .card-proj .img-link video {
+    width: 100%;
+    max-width: 34rem;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    border: solid 3px var(--branco);
+    border-radius: 8px;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+/* contain, não cover: screenshot de dashboard é largo e o cover cortava
+   as laterais — o logo do produto sumia. O fundo branco faz a sobra
+   parecer moldura, e não buraco. */
+.projetos .card-proj .img-link img {
+    object-fit: contain;
+    object-position: center;
+    background-color: var(--branco);
+}
+
+/* O vídeo é 16:9 num quadro 16:10: a sobra é mínima e o cover fecha melhor */
+.projetos .card-proj .img-link video {
+    object-fit: cover;
+}
+
+/* Antes o hover jogava a imagem 25rem para a esquerda e estourava a tela.
+   Agora ela só se destaca no lugar; o clique abre o lightbox. */
+.projetos .card-proj .img-link img {
+    cursor: zoom-in;
+}
+
+.projetos .card-proj .img-link img:hover,
+.projetos .card-proj .img-link img:focus-visible {
+    transform: translate(-4px, -4px) scale(1.02);
+    box-shadow: 10px 10px 0px -1px var(--amarelo), var(--sombra-suave);
+}
+
+/* --- Painel de arquitetura, para projeto que ainda não tem tela --- */
+.projetos .card-proj .mockup {
+    width: 100%;
+    max-width: 34rem;
+    aspect-ratio: 16 / 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: var(--preto);
+    border: solid 3px var(--branco);
+    border-radius: 8px;
+}
+
+.projetos .card-proj .mockup__eyebrow {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amarelo);
+}
+
+.projetos .card-proj .mockup__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    list-style: none;
+}
+
+.projetos .card-proj .mockup__list li {
+    font-size: clamp(0.8rem, 1.6vw, 1rem);
+    font-weight: 700;
+    color: var(--branco);
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.projetos .card-proj .mockup__list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--verde);
+}
+
+/* --- Links --- */
+.projetos .card-proj .links {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
-    padding: 2rem;
-    background-color: #ffdd55;
-
-
-    .card-proj{
-       width: 80vw;
-       height: 80vh;
-       background-color: #1066e8;
-       border-radius: 30px;
-       box-shadow: 10px 10px 10px -2px #3f3c3c;
-       color: #ffffff;
-
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
-        padding: 3rem;
-            .text{
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                align-items: center;
-                text-align: center;
-                gap: 1rem;
-                h1{
-                    font-size: 20px;
-                    font-weight: 800;
-                }
-                p{
-                    font-size: 13px;
-                    font-weight: 500;
-                }
-            }
-
-            .img-link{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 2rem;
-
-               
-
-                img, video{
-                    width:40rem ;
-                    height: auto;
-                    border: solid 3px #fff;
-                    transition: all 1s ease-in-out;
-}
-                img:hover, video:hover{
-                    box-shadow: 10px 10px 0px -1px #ffdd55,
-                                20px 20px 30px -1px #3f3c3c;
-                    transform:scale(1.5);
-                    position: relative;
-                    left: -25rem;
-                }
-
-
-                    
-                a{  
-                    transition: all 0.3s ease-in-out;
-                    padding: 1rem;
-                    font-weight: 200;
-                    background-color: #eb771e;
-                    border-radius: 20px;
-                    border: solid 3px #0acf83;
-                    box-shadow: 10px 10px 0px -1px #000000;
-                    text-decoration: none;
-                    color: black;
-                }
-                a:hover{
-                    font-weight: 500;
-                    background-color: #ffdd55;
-                    box-shadow: 10px 10px 0px -3px #fff,
-                                20px 20px 30px -2px #3f3c3c;
-                }
-            }
-
-    }
+    gap: 1rem;
 }
 
-.display{
-    display: none;
+.projetos .card-proj .links a {
+    padding: 0.9rem 1.4rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--preto);
+    background-color: var(--laranja);
+    border: solid 3px var(--verde);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra-dura);
+    transition: transform var(--transicao), background-color var(--transicao),
+                box-shadow var(--transicao);
 }
 
+.projetos .card-proj .links a:hover,
+.projetos .card-proj .links a:focus-visible {
+    background-color: var(--amarelo);
+    transform: translate(-3px, -3px);
+    box-shadow: 13px 13px 0px -3px var(--branco), var(--sombra-suave);
+}
+
+/* O botão de demo é o principal: ele se destaca do link de código */
+.projetos .card-proj .links .btn-demo {
+    background-color: var(--verde);
+    border-color: var(--preto);
+}
+
+.projetos .card-proj .links .btn-demo:hover,
+.projetos .card-proj .links .btn-demo:focus-visible {
+    background-color: var(--amarelo);
+}
+
+/* Selo para repositório fechado — deixa claro que não é um link quebrado */
+.projetos .card-proj .btn-privado {
+    display: inline-block;
+    padding: 0.9rem 1.4rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--branco);
+    border: dashed 3px var(--branco);
+    border-radius: var(--raio);
+    opacity: 0.85;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
 @media (max-width: 768px) {
+    .projetos {
+        gap: 2rem;
+        padding: 0 1.5rem 3rem;
+    }
 
-    .projetos{
-        height: auto;
-        width: 100svw;
-        display: flex;
+    .projetos .card-proj {
+        width: 100%;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
-        padding: 2rem;
-        background-color: #ffdd55;
+        gap: 2rem;
+        padding: 1.8rem 1.4rem;
+        box-shadow: 6px 6px 0px -1px var(--preto);
+    }
 
-        .card-proj{
-            height: auto;
-            flex-direction: column;
+    .projetos .card-proj.destaque {
+        box-shadow: 8px 8px 0px -1px var(--preto);
+    }
 
-            .text{
-                h1{
-                    font-size: 1.5rem;
-                }
-                p{
-                    text-align: left;
-                    font-size: 0.7rem;
-                }
-            }
-            .img-link{
-                flex-direction: column;
-                img, video{
-                    width: 15rem;
-                }
-            }
-        }
+    /* A imagem vem antes do texto: é ela que segura a atenção no celular */
+    .projetos .card-proj .img-link {
+        order: -1;
+        width: 100%;
+    }
+
+    .projetos .card-proj .img-link img,
+    .projetos .card-proj .img-link video,
+    .projetos .card-proj .mockup {
+        max-width: 100%;
+    }
+
+    .projetos .card-proj .mockup {
+        aspect-ratio: auto;
+        padding: 1.5rem;
+    }
+
+    .projetos .card-proj .img-link img:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .projetos .card-proj .resumo {
+        font-size: 0.9rem;
+    }
+
+    .projetos .card-proj .bullets li {
+        font-size: 0.8rem;
+    }
+
+    .projetos .card-proj .links a,
+    .projetos .card-proj .btn-privado {
+        font-size: 0.75rem;
+        padding: 0.75rem 1.1rem;
+        box-shadow: 6px 6px 0px -1px var(--preto);
     }
 }

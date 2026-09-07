@@ -1,0 +1,104 @@
+/* ============================================================
+   FORMAÇÃO — seção nova
+   Usa o roxo que já existia nos cards de skill, sem cor inédita.
+   ============================================================ */
+.formacao {
+    width: 100%;
+    height: auto;
+    background-color: var(--amarelo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 2rem 5rem;
+}
+
+.formacao-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2.5rem;
+    width: min(85vw, 82rem);
+    padding-top: 2.5rem;
+}
+
+.card-form {
+    flex: 1 1 20rem;
+    max-width: 26rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 2rem;
+    background-color: var(--roxo);
+    color: var(--preto);
+    border: solid 3px var(--preto);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra-dura);
+    transition: transform var(--transicao), box-shadow var(--transicao);
+}
+
+.card-form:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 15px 15px 0px -1px var(--preto), var(--sombra-suave);
+}
+
+.card-form .periodo {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.8rem;
+    background-color: var(--amarelo);
+    border-radius: 100px;
+}
+
+.card-form h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.card-form .instituicao {
+    font-size: 0.9rem;
+    font-weight: 700;
+    opacity: 0.85;
+}
+
+.card-form p {
+    font-size: 0.88rem;
+    font-weight: 500;
+    line-height: 1.55;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+    .formacao {
+        padding: 0 1.5rem 3rem;
+    }
+
+    .formacao-grid {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .card-form {
+        width: 100%;
+        max-width: none;
+        padding: 1.5rem;
+        box-shadow: 6px 6px 0px -1px var(--preto);
+    }
+
+    .card-form:hover {
+        transform: none;
+        box-shadow: 6px 6px 0px -1px var(--preto);
+    }
+}

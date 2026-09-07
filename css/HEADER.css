@@ -1,127 +1,153 @@
+/* ============================================================
+   BOTÕES — antes esse bloco estava duplicado em HEADER e SOBRE
+   ============================================================ */
+.bt {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
 
+.bt .mail,
+.bt .cv {
+    display: inline-block;
+    text-align: center;
+    padding: 0.9rem 2rem;
+    background-color: var(--preto);
+    color: var(--branco);
+    border: solid 2px var(--amarelo);
+    border-radius: 200px;
+    box-shadow: var(--sombra-dura), var(--sombra-suave);
+    transition: transform var(--transicao), background-color var(--transicao),
+                color var(--transicao), box-shadow var(--transicao);
+}
 
-header{
-    width: 99vw;
-    height: 100vh;
+.bt .mail:hover,
+.bt .cv:hover,
+.bt .mail:focus-visible,
+.bt .cv:focus-visible {
+    background-color: var(--branco);
+    color: var(--preto);
+    transform: translate(-3px, -3px);
+    box-shadow: 13px 13px 0px -1px var(--preto), var(--sombra-suave);
+}
 
+/* ============================================================
+   HEADER
+   ============================================================ */
+header {
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 8rem;
-    padding: 2rem;
-
-    background-color: #ffdd55;
-
-    aside{
-        display: flex;
-        flex-direction: column;
-        font-family: "montserrat";
-        
-       h1{
-        display: flex;
-        flex-direction: row;
-        font-size: 3rem;
-        font-weight: 900;
-       }
-       h2{
-
-        font-size: 4rem;
-        font-weight: 500;
-       }
-       h3{
-        font-size: 2rem;
-        font-weight: 200;
-        font-style: bold;
-       }
-    }
-
-
-    .bt{
-        height: 10vh;
-        display: flex;
-        flex-direction: row;
-        justify-content: start;
-        gap: 2rem;
-        padding-top: 1rem;
-    
-        font-size: 1.3rem;
-        font-family: 'montserrat';
-        font-weight: 200;
-        .mail, .cv{
-            transition: all 0.3s ease-in-out;
-            text-align: center;
-            align-content: center;
-            height:60% ;
-            width: 30%;
-            background-color: #000000;
-            color: #ffffff;
-            border: solid 2px #ffdd55;
-            border-radius: 200px;
-            box-shadow: 10px 10px 0px -1px,
-                        20px 20px 30px -1px #3f3c3c;
-
-
-        }
-     .mail:hover, .cv:hover{
-        background-color: #ffffff;
-        color: #000000;           
-         box-shadow: 10px 10px 0px -1px #000000,
-                     20px 20px 30px -1px #3f3c3c;
-     }
-     
-    }
+    gap: 6rem;
+    padding: calc(var(--nav-h) + 2rem) 2rem 3rem;
+    background-color: var(--amarelo);
 }
 
-/* Estilos para .foto */
+header aside {
+    display: flex;
+    flex-direction: column;
+    max-width: 34rem;
+}
+
+header .hello {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: clamp(1.5rem, 4vw, 2.6rem);
+    font-weight: 900;
+    letter-spacing: 0.02em;
+}
+
+/* O foguete: fica dentro do próprio bloco, não sai voando da tela */
+header .caixa {
+    display: inline-block;
+    font-size: 0.9em;
+    will-change: transform;
+}
+
+header .nome {
+    font-size: clamp(2.6rem, 9vw, 5rem);
+    font-weight: 500;
+    line-height: 1.05;
+    margin-top: 0.5rem;
+}
+
+/* Cada letra vira um span pelo JS para a animação de entrada */
+header .nome .letra {
+    display: inline-block;
+    white-space: pre;
+}
+
+header .cargo {
+    font-size: clamp(1.1rem, 3vw, 1.8rem);
+    font-weight: 300;
+    margin-top: 0.8rem;
+}
+
+header .tagline {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    margin-top: 0.6rem;
+    opacity: 0.75;
+}
+
+/* ============================================================
+   FOTO
+   ============================================================ */
 .foto {
     height: 30rem;
     width: auto;
+    object-fit: cover;
     border-radius: 10px;
-    border: solid #000000 3px;
-    box-shadow: 15px 15px 0px -1px #000000,
-                20px 20px 30px -1px #000000;
+    border: solid var(--preto) 3px;
+    box-shadow: 15px 15px 0px -1px var(--preto), 20px 20px 30px -1px var(--preto);
+    transition: transform 0.5s ease-in-out;
 }
 
+.foto:hover {
+    transform: translate(-5px, -5px) rotate(-1deg);
+}
 
+/* ============================================================
+   MOBILE
+   ============================================================ */
 @media (max-width: 768px) {
-   
+    header {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: calc(var(--nav-h) + 2rem) 1.5rem 3rem;
+        text-align: left;
+    }
 
-    header{
-        width: 100svw;
-        position: relative;
-        flex-direction: column; 
-        padding-top: 5rem;
-        padding-left: 1rem;
+    header aside {
+        width: 100%;
+    }
+
+    .foto {
+        height: 18rem;
+        box-shadow: 10px 10px 0px -1px var(--preto);
+    }
+
+    .bt {
         gap: 1rem;
-        aside{
-            gap: 1rem;
-            h1{
-                font-size: 2rem;
-            }
-            h2{
-                font-size: 1.8rem;
-            }
-            h3{
-                font-size: 1.4rem;
-            }
-        }
+        padding-top: 1rem;
     }
-    .foto{
-        height: 20rem;
-        position: relative;
-        left: -4rem;
-        
 
-    }
-    .bt{
-    
-        flex-direction: row;
-        flex-wrap: wrap;
-
-        .mail, .cv{
-            font-size: 0.8rem;
-        }
-
+    .bt .mail,
+    .bt .cv {
+        font-size: 0.85rem;
+        padding: 0.75rem 1.4rem;
+        box-shadow: 6px 6px 0px -1px var(--preto);
     }
 }
