@@ -46,16 +46,6 @@
     box-shadow: -14px -14px 0px -1px var(--amarelo);
 }
 
-/* Card sem imagem: o texto ocupa a largura toda, com medida de leitura
-   controlada para a linha não ficar longa demais */
-.experiencias .card-exp.sem-midia {
-    justify-content: flex-start;
-}
-
-.experiencias .card-exp.sem-midia .text-exp {
-    max-width: 62rem;
-}
-
 .experiencias .text-exp {
     display: flex;
     flex-direction: column;
